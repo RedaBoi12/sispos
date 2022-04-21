@@ -26,9 +26,9 @@
             </div>
             <ul class="list-group list-group-flush">
               <li class="list-group-item"><i class="fa-solid fa-cart-shopping"></i> {{this.orderCount}} Order(s) in Total</li>
-              <li class="list-group-item"><i class="fa-solid fa-cart-shopping"></i> > Orders Complete: {{this.ordersComplete}}</li>
-              <li class="list-group-item"><i class="fa-solid fa-cart-shopping"></i> > Orders Processing: {{this.ordersProcessing}}</li>
-              <li class="list-group-item"><i class="fa-solid fa-cart-shopping"></i> > Orders Cancelled: {{this.ordersCancelled}}</li>
+              <li class="list-group-item"><i class="fa-solid fa-x" style="color: red;"></i> Orders Complete: {{this.ordersComplete}}</li>
+              <li class="list-group-item"><i class="fa-solid fa-spinner" style="color: orange;"></i> Orders Processing: {{this.ordersProcessing}}</li>
+              <li class="list-group-item"><i class="fa-solid fa-check" style="color: lime;"></i> Orders Cancelled: {{this.ordersCancelled}}</li>
             </ul>
             <br>
             <h5 class="card-title">Orders</h5>
