@@ -1,0 +1,42 @@
+label{
+    color: black;
+}
+
+#defaultLoginFormRemember{
+    margin-right: 10px;
+}
+
+p{
+    font-weight: lighter;
+    align-items: center;
+    font-size: 24px;
+    text-align: left;
+    color: black;
+    letter-spacing: .1em;
+}
+
+.container{
+    animation: 1s slide-right forwards;
+    transform:translateX(-100%);
+}
+
+.col-md-6{
+    margin-top: 20%;
+}
+
+main{
+    overflow: hidden;
+}
+
+.container{
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+
+
+
+@keyframes slide-right {
+    to {
+      transform:translateX(0);
+    }
+  }

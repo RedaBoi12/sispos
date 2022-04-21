@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "sispos-eb416": {
+      "hosting": {
+        "sispos-dashboard": [
+          "sispos-eb416"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "sispos-eb416"
+  }
+}

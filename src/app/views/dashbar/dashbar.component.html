@@ -1,0 +1,37 @@
+<div class="container-fluid">
+    <div class="row">
+            <div class="col-2">
+                <div id="sidebar-wrapper">
+                    <ul class="sidebar-nav">
+                        <li class="sidebar-brand disabled text-white">
+                            <i class="fa-solid fa-database"></i> SISPOS - HOME
+                        </li>
+                        <li>
+                            <a routerLink="./">Home</a>
+                        </li>
+                        <li>
+                            <a routerLink="products">Products</a>
+                        </li>
+                        <li>
+                            <a routerLink="categories">Categories</a>
+                        </li>
+                        <li>
+                            <a routerLink="orders">Orders</a>
+                        </li>
+                        <li>
+                            <a routerLink="clients">Clients</a>
+                        </li>
+                        <li>
+                            <a routerLink="coupons">Coupons</a>
+                        </li>
+                        <li>
+                            <a class="signout" (click)="this.aservice.SignOut()"><i class="fa-solid fa-right-from-bracket"></i>Sign Out</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-10 main">
+                <router-outlet></router-outlet>
+            </div>
+    </div>
+</div>

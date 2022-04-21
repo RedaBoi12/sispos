@@ -1,0 +1,31 @@
+<h2>VIEW / EDIT - ID: {{this.id}}</h2>
+<hr>
+<div class="container-fluid">
+  <form [formGroup]="addForm">
+    <fieldset>
+    <div class="mb-3">
+      <br>
+      <label for="name" class="form-label">Name</label>
+      <input formControlName="name" title="Name" required type="text" class="form-control" id="name">
+      <div id="nameHelp" class="form-text">Make sure this category doesn't already exist.</div>
+      <br>
+      <label for="name" class="form-label">Description</label>
+      <input maxlength="100" formControlName="description" title="Description" required type="text" class="form-control" id="description">
+      <div id="descriptionHelp" class="form-text">100 Character Length Maximum.</div>
+      <br>
+      <input formControlName="isUnlimited" title="isUnlimited" required type="checkbox" class="form-check-input" id="isunlimited" (click)="changeEvent()">
+      <label for="isUnlimited" class="form-check-label">Check if the coupons is unlimited</label>
+        <br>
+        <br>
+        <div *ngIf="!this.isUnlimited">
+            <input formControlName="expiration" title="Expiration" required type="date" class="form-control" id="expiration">
+            <div id="expirationHelp" class="form-text">Only if coupon isn't unlimited.</div>
+        </div>
+
+    </div>
+    <button type="button" class="btn btn-success" (click)="update()">Update</button>
+    <br>
+  </fieldset>
+  </form>
+</div>
+<hr>

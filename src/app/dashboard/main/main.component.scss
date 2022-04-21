@@ -1,0 +1,21 @@
+.container{
+    margin: 50px;
+}
+img{
+    margin-top: 10px;
+    height: 220px;
+}
+a{
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
+    font-weight: lighter;
+}
+a:hover{
+    font-weight: bold;
+    color: lightgreen;
+}
+.card{
+    margin-right: 5vw;
+    width: 18rem;
+}

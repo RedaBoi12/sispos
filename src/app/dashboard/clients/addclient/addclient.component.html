@@ -1,0 +1,49 @@
+<h2>ADD CLIENT</h2>
+<hr>
+<div class="container-fluid">
+  <form [formGroup]="addForm">
+    <fieldset>
+    <div class="mb-3">
+      <br>
+      <label for="name" class="form-label">Full Name</label>
+      <input formControlName="firstname" title="FirstName" required type="text" class="form-control" id="firstname" placeholder="First Name">
+      <input formControlName="lastname" title="LastName" required type="text" class="form-control" id="lastname" placeholder="Last Name">
+      <br>
+      <label for="email" class="form-label">Email</label>
+      <input formControlName="email" title="Email" required type="text" class="form-control" id="email" placeholder="email@email.com">
+      <br>
+      <label for="mobile" class="form-label">Mobile</label>
+      <input formControlName="mobile" title="Mobile" required type="text" class="form-control" id="mobile" placeholder="+2126-06-06-06-06">
+      <br>
+      <label for="avatar" class="form-label">Avatar</label>
+      <input formControlName="avatar" title="Avatar" type="text" class="form-control" id="avatar" placeholder="Avatar Image Link">
+      <br>
+      <label for="plan" class="form-label">Plan</label>
+      <select formControlName="plan" title="Plan" required class="form-control" id="plans">
+          <option disabled value="-1">-- Choose Plan --</option>
+          <option *ngFor="let plan of plans" value="{{plan}}">{{plan}}</option>
+      </select>
+      <br>
+      <label for="adresse" class="form-label">Adresse</label>
+      <input formControlName="street" title="Street" required type="text" class="form-control" id="street" placeholder="Street Name">
+      <input formControlName="city" title="City" required type="text" class="form-control" id="city" placeholder="City Name">
+      <input formControlName="country" title="Country" required type="text" class="form-control" id="country" placeholder="Country Name">
+      <br>
+      <label for="payment" class="form-label">Payment Information</label>
+      <select formControlName="banktype" title="Bank" required class="form-control" id="banks">
+          <option disabled value="-1">-- Choose Bank --</option>
+          <option *ngFor="let bank of banks" value="{{bank}}">{{bank}}</option>
+      </select>
+      <input formControlName="ccnumber" title="CCNumber" required type="text" class="form-control" id="ccnumber" placeholder="Credit Card Number">
+      <input maxlength="3" formControlName="ccv" title="CCV" required type="number" class="form-control" id="ccv" placeholder="CCV">
+      <input formControlName="expiry" title="Expiry" required type="text" class="form-control" id="expiry" placeholder="Expiry Date">
+      <br>
+      <input type="checkbox" formControlName="isActive" title="Category" required class="form-check-input" id="isActive">
+      <label for="isActive" class="form-check-label"> is Active?</label>
+    </div>
+    <button type="button" (click)="create()" class="btn btn-success">Add</button>
+    <br>
+  </fieldset>
+  </form>
+</div>
+<hr>

@@ -1,0 +1,82 @@
+<div class="container d-flex">
+    <div class="row">
+        <div class="card">
+            <img src="../../../assets/1.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item"><i class="fa-solid fa-cart-shopping"></i> {{this.productCount}} Product(s) Available <br><i class="fa-solid fa-list-check"></i> {{this.categoryCount}} Category(ies)</li>
+            </ul>
+            <br>
+            <h5 class="card-title">Products</h5>
+            <p class="card-text">Currently available products in the database</p>
+            <div class="card-body">
+                <hr>
+              <a routerLink="products" class="card-link"><i class="fa-solid fa-eye"></i>View Products</a><br>
+              <a routerLink="categories" class="card-link"><i class="fa-solid fa-eye"></i>View Categories</a>
+              <hr>
+              <a  class="card-link"><i class="fa-solid fa-download"></i>Download Products</a>
+            </div>
+          </div>
+    </div>
+    <div class="row">
+        <div class="card">
+            <img src="../../../assets/2.png" class="card-img-top" alt="...">
+            <div class="card-body">
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item"><i class="fa-solid fa-cart-shopping"></i> {{this.orderCount}} Order(s) in Total</li>
+              <li class="list-group-item"><i class="fa-solid fa-cart-shopping"></i> > Orders Complete: {{this.ordersComplete}}</li>
+              <li class="list-group-item"><i class="fa-solid fa-cart-shopping"></i> > Orders Processing: {{this.ordersProcessing}}</li>
+              <li class="list-group-item"><i class="fa-solid fa-cart-shopping"></i> > Orders Cancelled: {{this.ordersCancelled}}</li>
+            </ul>
+            <br>
+            <h5 class="card-title">Orders</h5>
+            <p class="card-text">Currently processed orders in the database</p>
+            <div class="card-body">
+                <hr>
+              <a routerLink="orders" class="card-link"><i class="fa-solid fa-eye"></i>View Orders</a>
+              <hr>
+              <a  class="card-link"><i class="fa-solid fa-download"></i>Download Orders</a>
+            </div>
+          </div>
+    </div>
+    <div class="row">
+        <div class="card">
+            <img src="../../../assets/3.png" class="card-img-top" alt="...">
+            <div class="card-body">
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item"><i class="fa-solid fa-cart-shopping"></i> {{this.clientCount}} Clients(s) Registered</li>
+            </ul>
+            <br>
+            <h5 class="card-title">Clients</h5>
+            <p class="card-text">Currently registered clients in the database</p>
+            <div class="card-body">
+                <hr>
+              <a routerLink="clients" class="card-link"><i class="fa-solid fa-eye"></i>View Clients</a>
+              <hr>
+              <a  class="card-link"><i class="fa-solid fa-download"></i>Download Clients</a>
+            </div>
+          </div>
+    </div>
+    <div class="row">
+        <div class="card">
+            <img src="../../../assets/4.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item"><i class="fa-solid fa-cart-shopping"></i> {{this.couponCount}} Coupon(s) Created</li>
+            </ul>
+            <br>
+            <h5 class="card-title">Coupons</h5>
+            <p class="card-text">Currently available coupons in the database</p>
+            <div class="card-body">
+                <hr>
+              <a routerLink="coupons" class="card-link"><i class="fa-solid fa-eye"></i>View Coupons</a>
+              <hr>
+              <a  class="card-link"><i class="fa-solid fa-download"></i>Download Coupons</a>
+            </div>
+          </div>
+    </div>
+</div>

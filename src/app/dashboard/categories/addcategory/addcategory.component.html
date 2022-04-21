@@ -1,0 +1,21 @@
+<h2>ADD CATEGORY</h2>
+<hr>
+<div class="container-fluid">
+  <form [formGroup]="addForm">
+    <fieldset>
+    <div class="mb-3">
+      <br>
+      <label for="name" class="form-label">Name</label>
+      <input formControlName="name" title="Name" required type="text" class="form-control" id="name">
+      <div id="nameHelp" class="form-text">Make sure this category doesn't already exist.</div>
+      <br>
+      <label for="name" class="form-label">Description</label>
+      <input maxlength="100" formControlName="description" title="Description" required type="text" class="form-control" id="description">
+      <div id="descriptionHelp" class="form-text">100 Character Length Maximum.</div>
+    </div>
+    <button type="button" (click)="create()" class="btn btn-success">Add</button>
+    <br>
+  </fieldset>
+  </form>
+</div>
+<hr>

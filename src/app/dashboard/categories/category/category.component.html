@@ -1,0 +1,20 @@
+<h2>VIEW / EDIT - ID: {{this.id}}</h2>
+<hr>
+<div class="container-fluid">
+  <form [formGroup]="addForm">
+    <fieldset>
+    <div class="mb-3">
+      <br>
+      <label for="name" class="form-label">Name</label>
+      <input formControlName="name" title="Name" required type="text" class="form-control" id="name">
+      <br>
+      <label for="name" class="form-label">Description</label>
+      <input maxlength="100" formControlName="description" title="Description" required type="text" class="form-control" id="description">
+      <div id="descriptionHelp" class="form-text">100 Character Length Maximum.</div>
+    </div>
+    <button type="button" class="btn btn-success" (click)="update()">Update</button>
+    <br>
+  </fieldset>
+  </form>
+</div>
+<hr>
