@@ -17,6 +17,7 @@ export class CategoryComponent implements OnInit {
   addForm!: FormGroup;
   id: number;
   category!:any;
+  isChild:boolean = false;
 
 
   constructor(private API: ApiService, public router: Router, @Inject(MAT_DIALOG_DATA) public data:any) {
@@ -26,21 +27,26 @@ export class CategoryComponent implements OnInit {
   ngOnInit(): void {
     this.addForm = new FormGroup({
       'name': new FormControl(),
-      'description': new FormControl()
+      'description': new FormControl(),
+      'shell': new FormControl(),
+      'mother': new FormControl()
     })
 
     this.API.getCategory(this.id).subscribe((response)=>{
       this.category = response;
       this.addForm.get('name')?.setValue(this.category[0].name);
       this.addForm.get('description')?.setValue(this.category[0].description);
+      this.addForm.get('shell')?.setValue(this.category[0].shell);
+      this.addForm.get('mother')?.setValue(this.category[0].motherCategory);
     })
   }
-
 
   update(){
     let Data:any = {
       'name': `${this.addForm.get('name')?.value}`,
       'description': `${this.addForm.get('description')?.value}`,
+      'shell': `${this.addForm.get('shell')?.value}`,
+      'motherCategory': `${this.addForm.get('mother')?.value}`
     }
     this.API.updateCategory(this.id, Data).subscribe(()=>{});
     Swal.fire({

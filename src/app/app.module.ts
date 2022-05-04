@@ -10,24 +10,21 @@ import { ProductsComponent } from './dashboard/products/products.component';
 import { OrdersComponent } from './dashboard/orders/orders.component';
 import { ClientsComponent } from './dashboard/clients/clients.component';
 import { CouponsComponent } from './dashboard/coupons/coupons.component';
-import { DashbarComponent } from './views/dashbar/dashbar.component';
-import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { DashbarComponent } from './shared/dashbar/dashbar.component';
+import { initializeApp , provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
-import { provideAuth,getAuth } from '@angular/fire/auth';
-import { provideDatabase,getDatabase } from '@angular/fire/database';
-import { provideFirestore,getFirestore } from '@angular/fire/firestore';
-import { provideStorage,getStorage } from '@angular/fire/storage';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { provideAuth , getAuth } from '@angular/fire/auth';
+import { FormsModule , ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CategoriesComponent } from './dashboard/categories/categories.component';
-import {MatTableModule} from '@angular/material/table';
-import {MatPaginatorModule} from '@angular/material/paginator';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
 import { HttpClientModule } from '@angular/common/http';
 import { CategoryComponent } from './dashboard/categories/category/category.component';
 import { AddcategoryComponent } from './dashboard/categories/addcategory/addcategory.component';
 import { MatDialogModule } from '@angular/material/dialog'
 import { MatSortModule } from '@angular/material/sort';
-import {MatInputModule} from '@angular/material/input';
+import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { ProductComponent } from './dashboard/products/product/product.component';
 import { AddproductComponent } from './dashboard/products/addproduct/addproduct.component';
@@ -37,8 +34,10 @@ import { MatListModule } from '@angular/material/list';
 import { CouponComponent } from './dashboard/coupons/coupon/coupon.component';
 import { AddcouponComponent } from './dashboard/coupons/addcoupon/addcoupon.component';
 import { OrderComponent } from './dashboard/orders/order/order.component';
-import { AddorderComponent } from './dashboard/orders/addorder/addorder.component'
-
+import { AddorderComponent } from './dashboard/orders/addorder/addorder.component';
+import { TasksComponent } from './dashboard/tasks/tasks.component';
+import {DragDropModule} from '@angular/cdk/drag-drop';
+import { AddtaskComponent } from './dashboard/tasks/addtask/addtask.component';
 
 
 @NgModule({
@@ -62,7 +61,9 @@ import { AddorderComponent } from './dashboard/orders/addorder/addorder.componen
     CouponComponent,
     AddcouponComponent,
     OrderComponent,
-    AddorderComponent
+    AddorderComponent,
+    TasksComponent,
+    AddtaskComponent
   ],
   imports: [
     BrowserModule,
@@ -72,18 +73,16 @@ import { AddorderComponent } from './dashboard/orders/addorder/addorder.componen
     MatSortModule,
     MatInputModule,
     MatListModule,
+    BrowserAnimationsModule,
     MatDialogModule,
     ReactiveFormsModule,
     MatFormFieldModule,
+    DragDropModule,
     HttpClientModule,
     MatPaginatorModule,
     AppRoutingModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
-    provideAuth(() => getAuth()),
-    provideDatabase(() => getDatabase()),
-    provideFirestore(() => getFirestore()),
-    provideStorage(() => getStorage()),
-    BrowserAnimationsModule
+    provideAuth(() => getAuth())
   ],
   providers: [],
   bootstrap: [AppComponent]

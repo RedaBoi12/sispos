@@ -9,8 +9,17 @@
       <input formControlName="name" title="Name" required type="text" class="form-control" id="name">
       <br>
       <label for="name" class="form-label">Description</label>
-      <input maxlength="100" formControlName="description" title="Description" required type="text" class="form-control" id="description">
+      <select title="description" formControlName="description" class="form-select" id="description">
+        <option value="Mother Category">Mother Category</option>
+        <option value="Child Category">Child Category</option>
+      </select>
       <div id="descriptionHelp" class="form-text">100 Character Length Maximum.</div>
+      <br>
+      <label for="shell" class="form-label">Shell</label>
+      <input formControlName="shell" title="Shell" required type="text" class="form-control" id="shell">
+      <br>
+        <label for="mother" class="form-label">Mother Category</label>
+        <input formControlName="mother" title="Mother Category" required type="text" class="form-control" id="mother">
     </div>
     <button type="button" class="btn btn-success" (click)="update()">Update</button>
     <br>

@@ -18,9 +18,13 @@
       <label for="ordertime" class="form-label">Order Time</label>
       <input formControlName="ordertime" title="ordertime" required type="text" class="form-control" id="ordertime">
       <br>
+      <label for="total" class="form-label">Total/TTC</label>
+      <input formControlName="total" title="total" required type="number" class="form-control" id="total">
+      <br>
       <label for="couponused" class="form-label">Coupon ID Used</label>
       <select formControlName="couponused" title="couponused" required class="form-control" id="couponused">
         <option disabled value="-1">-- Choose Coupon ID --</option>
+        <option value="0">1</option>
         <option *ngFor="let coupon of coupons" value="{{coupon.id}}">{{coupon.id}}</option>
     </select>
     <br>

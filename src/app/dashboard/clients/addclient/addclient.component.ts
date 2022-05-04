@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ApiService } from 'src/app/services/api.service';
+import { countries } from 'src/app/services/country-data-store';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -15,6 +16,7 @@ export class AddclientComponent implements OnInit {
   addForm!: FormGroup;
   plans:any = ['Free', 'Basic', 'Premium', 'Entreprise'];
   banks:any = ['MasterCard', 'Visa', 'Discover Card'];
+  public countries:any = countries;
 
 
   constructor(private API: ApiService, public router: Router) {
@@ -29,9 +31,9 @@ export class AddclientComponent implements OnInit {
       'plan': new FormControl(),
       'avatar': new FormControl(),
 
-      'street': new FormControl(),
-      'city': new FormControl(),
-      'country': new FormControl(),
+      'locationstreet': new FormControl(),
+      'locationcity': new FormControl(),
+      'locationcountry': new FormControl(),
 
       'banktype': new FormControl(),
       'ccnumber': new FormControl(),
@@ -52,19 +54,18 @@ export class AddclientComponent implements OnInit {
       'plan': this.addForm.get('plan')?.value,
       'avatar': this.addForm.get('avatar')?.value,
 
-      'locationstreet': this.addForm.get('street')?.value,
-      'locationcity': this.addForm.get('city')?.value,
-      'locationcountry': this.addForm.get('street')?.value,
+      'locationstreet': this.addForm.get('locationstreet')?.value,
+      'locationcity': this.addForm.get('locationcity')?.value,
+      'locationcountry': this.addForm.get('locationcountry')?.value,
 
       'type': this.addForm.get('banktype')?.value,
       'ccnumber': this.addForm.get('ccnumber')?.value,
       'ccv': this.addForm.get('ccv')?.value,
       'expiry': this.addForm.get('expiry')?.value,
 
-      'isActive': this.addForm.get('isActive')?.value,
-      'joinedin': Date()
+      'isActive': this.addForm.get('isActive')?.value
     }
-    //console.log(Data)
+    
     this.API.addClient(Data).subscribe(()=>{});
       Swal.fire({
         position: 'top-end',

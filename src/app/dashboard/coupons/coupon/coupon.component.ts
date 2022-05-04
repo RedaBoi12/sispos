@@ -49,7 +49,7 @@ export class CouponComponent implements OnInit {
           let Data:any = {
             'name': `${this.addForm.get('name')?.value}`,
             'description': `${this.addForm.get('description')?.value}`,
-            'expiration': `unlimited`,
+            'expiration': `2099-12-12 10:47:24.752827`,
           }
           this.API.updateCoupon(this.id, Data).subscribe(()=>{});
           Swal.fire({

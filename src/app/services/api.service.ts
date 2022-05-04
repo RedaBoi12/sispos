@@ -18,6 +18,29 @@ export class ApiService {
   constructor( private http: HttpClient) { }
 
 
+// GET DATA FOR CHARTS
+getClientActivity(){
+  return this.http.get(endpoint + 'clients/activity').pipe(
+    catchError(this.handleError)
+  );
+}
+getOrdersCompletion(){
+  return this.http.get(endpoint + 'orders/completion').pipe(
+    catchError(this.handleError)
+  );
+}
+
+
+
+
+
+
+
+
+
+
+  
+
 // COUNT SERVICES
 
 getCategoryCount(): Observable<any> {
@@ -50,6 +73,19 @@ getOrdersCountbyStatus(status: any): Observable<any> {
     catchError(this.handleError)
   );
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -115,7 +151,49 @@ getOrdersCountbyStatus(status: any): Observable<any> {
 
 
 
+// CHILD CATEGORIES API
+// CHILD CATEGORIES API
+// CHILD CATEGORIES API
+// CHILD CATEGORIES API
+// CHILD CATEGORIES API
+// CHILD CATEGORIES API
+// CHILD CATEGORIES API
+// CHILD CATEGORIES API
+// CHILD CATEGORIES API
+// CHILD CATEGORIES API
+// CHILD CATEGORIES API
 
+
+
+getCategoryChild(id: number, child: number): Observable<any> {
+  return this.http.get<Category>(endpoint + 'categories/'+id+'/'+child).pipe(
+    catchError(this.handleError)
+  );
+}
+
+getCategoryChildren(id: number): Observable<any> {
+  return this.http.get(endpoint + 'categories/'+id+'/children').pipe(
+    catchError(this.handleError)
+  );
+}
+
+addCategoryChild(categ: any, id: number): Observable<any> {
+  return this.http.post(endpoint + 'categories/'+id+'/add', categ).pipe(
+    catchError(this.handleError)
+  );
+}
+
+updateCategoryChild(id: number, categ: any): Observable<any> {
+  return this.http.put(endpoint + 'categories/child/' + id, categ).pipe(
+    catchError(this.handleError)
+  );
+}
+
+deleteCategoryChild(id: number): Observable<any> {
+  return this.http.delete<Category>(endpoint + 'categories/child/' + id).pipe(
+    catchError(this.handleError)
+  );
+}
 
 
 
@@ -141,6 +219,12 @@ getOrdersCountbyStatus(status: any): Observable<any> {
 
 getProducts(): Observable<any> {
   return this.http.get<Product>(endpoint + 'products').pipe(
+    catchError(this.handleError)
+  );
+}
+
+getlatestProducts(): Observable<any> {
+  return this.http.get(endpoint + 'products/latest').pipe(
     catchError(this.handleError)
   );
 }
@@ -222,6 +306,18 @@ getClients(): Observable<any> {
   );
 }
 
+getClientsbyActivity(isActive: string): Observable<any> {
+  return this.http.get(endpoint + 'clients/count/' + isActive).pipe(
+    catchError(this.handleError)
+  );
+}
+
+getlatestClients(): Observable<any> {
+  return this.http.get(endpoint + 'clients/latest').pipe(
+    catchError(this.handleError)
+  );
+}
+
 getClientNames(): Observable<any> {
   return this.http.get(endpoint + 'clients/names').pipe(
     catchError(this.handleError)
@@ -274,21 +370,30 @@ deleteClient(id: number): Observable<any> {
 
 
 
-// CATEGORIES API
-// CATEGORIES API
-// CATEGORIES API
-// CATEGORIES API
-// CATEGORIES API
-// CATEGORIES API
-// CATEGORIES API
-// CATEGORIES API
-// CATEGORIES API
-// CATEGORIES API
-// CATEGORIES API
+// COUPONS API
+// COUPONS API
+// COUPONS API
+// COUPONS API
+// COUPONS API
+// COUPONS API
+// COUPONS API
+// COUPONS API
+// COUPONS API
+// COUPONS API
+// COUPONS API
+// COUPONS API
+// COUPONS API
+
 
 
 getCoupons(): Observable<any> {
   return this.http.get<Coupon>(endpoint + 'coupons').pipe(
+    catchError(this.handleError)
+  );
+}
+
+getexpiredCoupons(): Observable<any> {
+  return this.http.get(endpoint + 'coupons/expired').pipe(
     catchError(this.handleError)
   );
 }
@@ -377,7 +482,23 @@ deleteCoupon(id: number): Observable<any> {
 // ORDERS API
 // ORDERS API
 
+getSales(): Observable<any> {
+  return this.http.get(endpoint + 'orders/sales').pipe(
+    catchError(this.handleError)
+  );
+}
 
+getSalesinCountries(): Observable<any> {
+  return this.http.get(endpoint + 'orders/countries').pipe(
+    catchError(this.handleError)
+  );
+}
+
+getlatestSale(): Observable<any> {
+  return this.http.get(endpoint + 'orders/latest').pipe(
+    catchError(this.handleError)
+  );
+}
 
 
 getOrders(): Observable<any> {
@@ -422,6 +543,133 @@ deleteOrder(id: number): Observable<any> {
     catchError(this.handleError)
   );
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// TASKS API
+// TASKS API
+// TASKS API
+// TASKS API
+// TASKS API
+// TASKS API
+// TASKS API
+// TASKS API
+// TASKS API
+// TASKS API
+// TASKS API
+// TASKS API
+// TASKS API
+// TASKS API
+// TASKS API
+// TASKS API
+// TASKS API
+
+
+
+
+getTasks(): Observable<any> {
+  return this.http.get<Task>(endpoint + 'tasks').pipe(
+    catchError(this.handleError)
+  );
+}
+
+getcompleteTasks(): Observable<any> {
+  return this.http.get<Task>(endpoint + 'tasks/complete').pipe(
+    catchError(this.handleError)
+  );
+}
+
+getincompleteTasks(): Observable<any> {
+  return this.http.get<Task>(endpoint + 'tasks/incomplete').pipe(
+    catchError(this.handleError)
+  );
+}
+
+getcompleteTasksCount(): Observable<any> {
+  return this.http.get(endpoint + 'tasks/completeCount').pipe(
+    catchError(this.handleError)
+  );
+}
+
+getTaskNames(): Observable<any> {
+  return this.http.get(endpoint + 'tasks/names').pipe(
+    catchError(this.handleError)
+  );
+}
+
+getTaskIDs(): Observable<any> {
+  return this.http.get(endpoint + 'tasks/ids').pipe(
+    catchError(this.handleError)
+  );
+}
+
+getTask(id: number): Observable<any> {
+  return this.http.get<Task>(endpoint + 'tasks/' + id).pipe(
+    catchError(this.handleError)
+  );
+}
+
+addTask(categ: any): Observable<any> {
+  return this.http.post(endpoint + 'tasks', categ).pipe(
+    catchError(this.handleError)
+  );
+}
+
+editTaskCompletion(id:number): Observable<any> {
+  return this.http.get(endpoint + 'tasks/'+id+'/switch').pipe(
+    catchError(this.handleError)
+  );
+}
+
+updateTask(id: number, categ: any): Observable<any> {
+  return this.http.put(endpoint + 'tasks/' + id, categ).pipe(
+    catchError(this.handleError)
+  );
+}
+
+deleteCompleteTasks(): Observable<any> {
+  return this.http.delete<Task>(endpoint + 'tasks/complete').pipe(
+    catchError(this.handleError)
+  );
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

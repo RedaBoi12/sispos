@@ -1,6 +1,8 @@
+import { AuthGuard } from './services/auth.guard';
+import { TasksComponent } from './dashboard/tasks/tasks.component';
 import { CategoryComponent } from './dashboard/categories/category/category.component';
 import { CategoriesComponent } from './dashboard/categories/categories.component';
-import { DashbarComponent } from './views/dashbar/dashbar.component';
+import { DashbarComponent } from './shared/dashbar/dashbar.component';
 import { CouponsComponent } from './dashboard/coupons/coupons.component';
 import { ClientsComponent } from './dashboard/clients/clients.component';
 import { OrdersComponent } from './dashboard/orders/orders.component';
@@ -56,7 +58,13 @@ const routes: Routes = [
 //////////////////////////////////////////////////////////////////////////
       {
         path: 'categories',
-        component: CategoriesComponent,
+        component: CategoriesComponent
+      },
+//////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////
+      {
+        path: 'tasks',
+        component: TasksComponent
       }
 //////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////

@@ -24,10 +24,10 @@ export class AddorderComponent implements OnInit {
   ngOnInit(): void {
     this.addForm = new FormGroup({
       'client': new FormControl(),
-      'ordertime': new FormControl(),
       'products': new FormControl(),
       'couponused': new FormControl(),
-      'status': new FormControl()
+      'status': new FormControl(),
+      'total': new FormControl()
     })
 
     this.API.getClientIDs().subscribe((response)=>{
@@ -41,14 +41,14 @@ export class AddorderComponent implements OnInit {
 
   create(){
     let Data:any = {
-      'client': `${this.addForm.get('client')?.value}`,
-      'ordertime': `${Date()}`,
-      'products': `(${JSON.stringify(this.addForm.get('products')?.value)}`,
+      'client': this.addForm.get('client')?.value,
+      'products': `${this.addForm.get('products')?.value}`,
       'couponused': this.addForm.get('couponused')?.value,
-      'status': this.addForm.get('status')?.value
+      'status': `${this.addForm.get('status')?.value}`,
+      'total': this.addForm.get('total')?.value,
     }
     console.log(Data)
-    this.API.addClient(Data).subscribe(()=>{});
+    this.API.addOrder(Data).subscribe(()=>{});
       Swal.fire({
         position: 'top-end',
         icon: 'success',

@@ -31,17 +31,19 @@ export class OrderComponent implements OnInit {
       'ordertime': new FormControl(),
       'products': new FormControl(),
       'couponused': new FormControl(),
-      'status': new FormControl()
+      'status': new FormControl(),
+      'total': new FormControl()
     })
 
     this.API.getOrder(this.id).subscribe((response)=>{
       this.order = response;
 
-      this.addForm.get('client')?.setValue(this.order[0].client);
-      this.addForm.get('ordertime')?.setValue(this.order[0].ordertime);
-      this.addForm.get('products')?.setValue(JSON.stringify(this.order[0].products));
-      this.addForm.get('couponused')?.setValue(this.order[0].couponused);
-      this.addForm.get('status')?.setValue(this.order[0].status);
+      this.addForm.get('client')?.setValue(this.order[0].client || 'none');
+      this.addForm.get('ordertime')?.setValue(this.order[0].ordertime || 'none');
+      this.addForm.get('products')?.setValue(this.order[0].products || 'none');
+      this.addForm.get('couponused')?.setValue(this.order[0].couponused || 0);
+      this.addForm.get('status')?.setValue(this.order[0].status || 'none');
+      this.addForm.get('total')?.setValue(this.order[0].total || 0);
     })
 
     this.API.getClientIDs().subscribe((response)=>{
@@ -57,11 +59,12 @@ export class OrderComponent implements OnInit {
     let Data:any = {
       'client': `${this.addForm.get('client')?.value}`,
       'ordertime': `${this.addForm.get('ordertime')?.value}`,
-      'products': `${JSON.stringify(this.order[0].products)}`,
+      'products': `${this.addForm.get('products')?.value}`,
       'couponused': this.addForm.get('couponused')?.value,
-      'status': this.addForm.get('status')?.value
+      'status': this.addForm.get('status')?.value,
+      'total': this.addForm.get('total')?.value,
     }
-    this.API.updateClient(this.id, Data).subscribe(()=>{});
+    this.API.updateOrder(this.id, Data).subscribe(()=>{});
     Swal.fire({
       position: 'top-end',
       icon: 'success',

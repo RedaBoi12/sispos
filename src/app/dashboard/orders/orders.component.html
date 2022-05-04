@@ -1,9 +1,4 @@
 <main>
-    <nav class="navbar navbar-light bg-success" (click)="this.openCreate()">
-      <div class="container-fluid">
-        <a class="navbar-brand"><i class="fa-solid fa-file-circle-plus"></i> Add Order</a>
-      </div>
-    </nav>
     <br>
     <div class="container">
       <div class="row">
@@ -13,22 +8,22 @@
           </mat-form-field>
           
           <table mat-table
-          [dataSource]="dataSource" multiTemplateDataRows
+          [dataSource]="dataSource" multiTemplateDataRows  matSort
           class="mat-elevation-z8">
      <ng-container matColumnDef="id">
-       <th mat-header-cell *matHeaderCellDef> ID </th>
+       <th mat-header-cell mat-sort-header *matHeaderCellDef> ID </th>
        <td mat-cell *matCellDef="let element"> {{element.id}} </td>
      </ng-container>
      <ng-container matColumnDef="client">
-        <th mat-header-cell *matHeaderCellDef> Client ID </th>
+        <th mat-header-cell mat-sort-header *matHeaderCellDef> Client ID </th>
         <td mat-cell *matCellDef="let element"> {{element.client}}</td>
       </ng-container>
       <ng-container matColumnDef="ordertime">
-        <th mat-header-cell *matHeaderCellDef> Ordered At </th>
+        <th mat-header-cell mat-sort-header *matHeaderCellDef> Ordered At </th>
         <td mat-cell *matCellDef="let element"> {{element.ordertime}}</td>
       </ng-container>
       <ng-container matColumnDef="status">
-        <th mat-header-cell *matHeaderCellDef> Status </th>
+        <th mat-header-cell mat-sort-header *matHeaderCellDef> Status </th>
         <td mat-cell *matCellDef="let element">
             <div *ngIf="element.status == 'complete'"><button type="button" class="btn btn-success" disabled>Completed</button></div>
             <div *ngIf="element.status == 'processing'"><button type="button" class="btn btn-warning" disabled>Processing</button></div>
@@ -36,7 +31,7 @@
         </td>
       </ng-container>
       <ng-container matColumnDef="total">
-        <th mat-header-cell *matHeaderCellDef> Order Total/TTC </th>
+        <th mat-header-cell mat-sort-header *matHeaderCellDef> Order Total/TTC </th>
         <td mat-cell *matCellDef="let element"> {{element.total}}</td>
       </ng-container>
       <ng-container matColumnDef="actions">
@@ -54,7 +49,7 @@
                [@detailExpand]="element == expandedElement ? 'expanded' : 'collapsed'">
             <div class="example-element-description">
              <span class="example-element-description-attribution"> <i class="fa-solid fa-book"></i> - Order Details :</span><br>
-              {{this.stringify(element.products)}}
+              {{element.products}}
             </div>
           </div>
         </td>
@@ -77,5 +72,7 @@
            
          </div>
        </div>
+       <br>
+       <button title="Add Order" type="button" class="btn btn-success btn-circle btn-xl" (click)="this.openCreate()"><i class="fa-solid fa-circle-plus"></i></button>
      </div>
    </main>

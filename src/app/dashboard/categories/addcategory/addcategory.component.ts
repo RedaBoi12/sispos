@@ -20,7 +20,9 @@ export class AddcategoryComponent implements OnInit {
   ngOnInit(): void {
     this.addForm = new FormGroup({
       'name': new FormControl(),
-      'description': new FormControl()
+      'description': new FormControl(),
+      'shell': new FormControl(),
+      'mother': new FormControl('none')
     })
   }
 
@@ -29,7 +31,9 @@ export class AddcategoryComponent implements OnInit {
     let Data:any = {
       'name': `${this.addForm.get('name')?.value}`,
       'description': `${this.addForm.get('description')?.value}`,
-      'createdat': `${Date()}`
+      'createdat': `${Date()}`,
+      'shell': `${this.addForm.get('shell')?.value}`,
+      'motherCategory': `${this.addForm.get('mother')?.value}`
     }
     this.API.addCategory(Data).subscribe(()=>{});
       Swal.fire({

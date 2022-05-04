@@ -85,7 +85,7 @@ export class OrdersComponent implements OnInit {
           confirmButtonText: 'Yes, delete it!'
         }).then((result) => {
           if (result.isConfirmed) {
-            this.API.deleteClient(id).subscribe(() => {});
+            this.API.deleteOrder(id).subscribe(() => {});
             Swal.fire({
               position: 'top-end',
               icon: 'success',

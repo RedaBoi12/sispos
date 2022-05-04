@@ -1,3 +1,4 @@
+import { Category } from './../../interfaces/category';
 import { CategoryComponent } from './category/category.component';
 import { AddcategoryComponent } from './addcategory/addcategory.component';
 import { Router } from '@angular/router';
@@ -8,18 +9,26 @@ import { MatDialog } from '@angular/material/dialog';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
+import { animate, state, style, transition, trigger } from '@angular/animations';
 
 
 @Component({
   selector: 'app-categories',
   templateUrl: './categories.component.html',
-  styleUrls: ['./categories.component.scss']
+  styleUrls: ['./categories.component.scss'],
+  animations: [
+    trigger('detailExpand', [
+      state('collapsed', style({height: '0px', minHeight: '0'})),
+      state('expanded', style({height: '*'})),
+      transition('expanded <=> collapsed', animate('225ms cubic-bezier(0.4, 0.0, 0.2, 1)')),
+    ]),
+  ],
 })
 export class CategoriesComponent implements OnInit {
   //TABLE CONTENT
-  displayedColumns= ['id', 'name', 'description', 'createdat', 'actions'];
+  displayedColumns= ['id', 'name', 'description', 'shell' , 'createdat', 'actions'];
   dataSource!:MatTableDataSource<any>;
-
+  expandedElement!: Category | null;
   //VARIABLES
   isEditing:boolean = false;
 
