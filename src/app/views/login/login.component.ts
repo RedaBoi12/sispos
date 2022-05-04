@@ -11,7 +11,8 @@ export class LoginComponent implements OnInit {
 
   constructor(public aservice: AuthService) { }
   loginForm!: FormGroup;
-
+  hide = true;
+  
   //REMOVE THIS LOGIN WHEN SETTING INTO PRODUCTION
   DEFlogin: string = 'admin@sispos.ma';
   DEFpassword: string = 'sispos123';

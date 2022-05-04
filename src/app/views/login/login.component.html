@@ -5,13 +5,27 @@
         <div class="col-md-6">
           <form [formGroup]="loginForm" class="text-center" action="#!" (submit)="login()">
             <p class="h4 mb-4">Sign in</p>
-            <input formControlName="login" type="email" name="email" id="defaultLoginFormEmail"
-              class="form-control mb-4" placeholder="E-mail">
-            <input formControlName="password" type="password" name="password" id="defaultLoginFormPassword"
-              class="form-control mb-4" placeholder="Password">
-            <div class="d-flex justify-content-around">
+            
+            <input
+             formControlName="login" 
+             type="email" 
+             name="email" 
+             id="defaultLoginFormEmail"
+             class="form-control mb-4" 
+             placeholder="E-mail">
+          
+            <input
+             matInput
+             formControlName="password" 
+             type="password" 
+             [type]="hide ? 'password':'text'"
+             name="password" 
+             id="defaultLoginFormPassword"
+             class="form-control mb-4" 
+             placeholder="Password">
+             <i matSuffix class="fa-solid {{hide? 'fa-eye':'fa-eye-slash'}}" (click)="hide = !hide" title="{{hide? 'Show Password':'Hide Password'}}"></i>
 
-            </div>
+             <br>
             <button class="btn btn-dark btn-block my-4" type="submit">Sign in</button>
           </form>
           <label class="custom-control-label" for="defaultLoginFormRemember">Contact <a rel="noopener"

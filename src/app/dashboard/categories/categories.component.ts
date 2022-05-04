@@ -60,7 +60,7 @@ export class CategoriesComponent implements OnInit {
   openCreate() {
     this.dialog.open(AddcategoryComponent, {
       width: '50%',
-      height: '50%'
+      height: '70%'
     });
   }
 
@@ -69,7 +69,7 @@ export class CategoriesComponent implements OnInit {
   edit(id: number) {
     this.dialog.open(CategoryComponent, {
       width: '50%',
-      height: '50%',
+      height: '70%',
       data: {
         id: id
       }
