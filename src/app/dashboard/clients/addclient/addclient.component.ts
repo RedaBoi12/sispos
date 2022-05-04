@@ -14,9 +14,9 @@ export class AddclientComponent implements OnInit {
 
 
   addForm!: FormGroup;
-  plans:any = ['Free', 'Basic', 'Premium', 'Entreprise'];
-  banks:any = ['MasterCard', 'Visa', 'Discover Card'];
-  public countries:any = countries;
+  plans: any = ['Free', 'Basic', 'Premium', 'Entreprise'];
+  banks: any = ['MasterCard', 'Visa', 'Discover Card'];
+  public countries: any = countries;
 
 
   constructor(private API: ApiService, public router: Router) {
@@ -45,8 +45,8 @@ export class AddclientComponent implements OnInit {
   }
 
 
-  create(){
-    let Data:any = {
+  create() {
+    let Data: any = {
       'firstname': `${this.addForm.get('firstname')?.value}`,
       'lastname': `${this.addForm.get('lastname')?.value}`,
       'email': `${this.addForm.get('email')?.value}`,
@@ -65,15 +65,15 @@ export class AddclientComponent implements OnInit {
 
       'isActive': this.addForm.get('isActive')?.value
     }
-    
-    this.API.addClient(Data).subscribe(()=>{});
-      Swal.fire({
-        position: 'top-end',
-        icon: 'success',
-        title: 'This Client was Added!',
-        showConfirmButton: false,
-        timer: 1500
-      })
+
+    this.API.addClient(Data).subscribe(() => { });
+    Swal.fire({
+      position: 'top-end',
+      icon: 'success',
+      title: 'This Client was Added!',
+      showConfirmButton: false,
+      timer: 1500
+    })
   }
 
 }

@@ -3,7 +3,7 @@ import { CategoryComponent } from './category/category.component';
 import { AddcategoryComponent } from './addcategory/addcategory.component';
 import { Router } from '@angular/router';
 import { ApiService } from './../../services/api.service';
-import {  Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import Swal from 'sweetalert2';
 import { MatDialog } from '@angular/material/dialog';
 import { MatTableDataSource } from '@angular/material/table';
@@ -18,38 +18,37 @@ import { animate, state, style, transition, trigger } from '@angular/animations'
   styleUrls: ['./categories.component.scss'],
   animations: [
     trigger('detailExpand', [
-      state('collapsed', style({height: '0px', minHeight: '0'})),
-      state('expanded', style({height: '*'})),
+      state('collapsed', style({ height: '0px', minHeight: '0' })),
+      state('expanded', style({ height: '*' })),
       transition('expanded <=> collapsed', animate('225ms cubic-bezier(0.4, 0.0, 0.2, 1)')),
     ]),
   ],
 })
 export class CategoriesComponent implements OnInit {
   //TABLE CONTENT
-  displayedColumns= ['id', 'name', 'description', 'shell' , 'createdat', 'actions'];
-  dataSource!:MatTableDataSource<any>;
+  displayedColumns = ['id', 'name', 'description', 'shell', 'createdat', 'actions'];
+  dataSource!: MatTableDataSource<any>;
   expandedElement!: Category | null;
   //VARIABLES
-  isEditing:boolean = false;
+  isEditing: boolean = false;
 
   @ViewChild('paginator') paginator!: MatPaginator;
   @ViewChild(MatSort) matSort!: MatSort;
 
-  constructor(private API: ApiService, public router: Router, private dialog: MatDialog){}
+  constructor(private API: ApiService, public router: Router, private dialog: MatDialog) { }
 
   ngOnInit(): void {
     this.getCategories();
   }
 
-  filterData($event: any)
-  {
+  filterData($event: any) {
     this.dataSource.filter = $event.target.value;
   }
 
 
   // GETS CATEGS
-  getCategories(): void{
-    this.API.getCategories().subscribe((response) =>{
+  getCategories(): void {
+    this.API.getCategories().subscribe((response) => {
       this.dataSource = new MatTableDataSource(response);
       this.dataSource.paginator = this.paginator;
       this.dataSource.sort = this.matSort;
@@ -58,7 +57,7 @@ export class CategoriesComponent implements OnInit {
 
 
   // CREATES CATEGS
-  openCreate(){
+  openCreate() {
     this.dialog.open(AddcategoryComponent, {
       width: '50%',
       height: '50%'
@@ -67,38 +66,38 @@ export class CategoriesComponent implements OnInit {
 
 
   // DELETES CATEG
-  edit(id: number){
+  edit(id: number) {
     this.dialog.open(CategoryComponent, {
       width: '50%',
       height: '50%',
-      data:{
+      data: {
         id: id
       }
     });
   }
 
   // DELETES CATEG
-  delete(id: number){
+  delete(id: number) {
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "You won't be able to revert this!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, delete it!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this.API.deleteCategory(id).subscribe(() => { });
         Swal.fire({
-          title: 'Are you sure?',
-          text: "You won't be able to revert this!",
-          icon: 'warning',
-          showCancelButton: true,
-          confirmButtonColor: '#3085d6',
-          cancelButtonColor: '#d33',
-          confirmButtonText: 'Yes, delete it!'
-        }).then((result) => {
-          if (result.isConfirmed) {
-            this.API.deleteCategory(id).subscribe(() => {});
-            Swal.fire({
-              position: 'top-end',
-              icon: 'success',
-              title: 'Your work has been saved',
-              showConfirmButton: false,
-              timer: 1500
-            })
-          }
+          position: 'top-end',
+          icon: 'success',
+          title: 'Your work has been saved',
+          showConfirmButton: false,
+          timer: 1500
         })
+      }
+    })
   }
 
 }

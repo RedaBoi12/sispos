@@ -1,76 +1,77 @@
 <main>
-    <br>
-    <div class="container">
-      <div class="row">
-        <div class="col-12">
-          <mat-form-field appearance="fill" class="container-fluid">
-            <input title="Filter" matInput placeholder="Filter.." autocomplete="off" (keyup)="filterData($event)">
-          </mat-form-field>
-          
-          <table mat-table matSort [dataSource]="dataSource" class="mat-elevation-z8 container">
-            
-            <!-- Position Column -->
-            <ng-container matColumnDef="id">
-              <th mat-header-cell mat-sort-header *matHeaderCellDef> Id. </th>
-              <td mat-cell *matCellDef="let element"> {{element.id}} </td>
-            </ng-container>
-          
-            <!-- Name Column -->
-            <ng-container matColumnDef="name">
-              <th mat-header-cell mat-sort-header *matHeaderCellDef> Name </th>
-              <td mat-cell *matCellDef="let element"> {{element.name}} </td>
-            </ng-container>
-          
-            <!-- Weight Column -->
-            <ng-container matColumnDef="description">
-              <th mat-header-cell mat-sort-header *matHeaderCellDef> Description </th>
-              <td mat-cell *matCellDef="let element"> {{element.description}} </td>
-            </ng-container>
-          
-            <!-- Symbol Column -->
-            <ng-container matColumnDef="price">
-              <th mat-header-cell mat-sort-header *matHeaderCellDef> Price </th>
-              <td mat-cell *matCellDef="let element"> {{element.price}} </td>
-            </ng-container>
+  <br>
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <mat-form-field appearance="fill" class="container-fluid">
+          <input title="Filter" matInput placeholder="Filter.." autocomplete="off" (keyup)="filterData($event)">
+        </mat-form-field>
 
-            <!-- Symbol Column -->
-            <ng-container matColumnDef="stock">
-                <th mat-header-cell mat-sort-header *matHeaderCellDef> Stock </th>
-                <td mat-cell *matCellDef="let element"> {{element.stock}} </td>
-              </ng-container>
+        <table mat-table matSort [dataSource]="dataSource" class="mat-elevation-z8 container">
 
-            <!-- Symbol Column -->
-            <ng-container matColumnDef="categoryid">
-                <th mat-header-cell mat-sort-header *matHeaderCellDef> Category ID </th>
-                <td mat-cell *matCellDef="let element"> {{element.categoryID}} </td>
-              </ng-container>
+          <!-- Position Column -->
+          <ng-container matColumnDef="id">
+            <th mat-header-cell mat-sort-header *matHeaderCellDef> Id. </th>
+            <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+          </ng-container>
 
-            <!-- Symbol Column -->
-            <ng-container matColumnDef="isactivated">
-                <th mat-header-cell mat-sort-header *matHeaderCellDef> is Activated ? </th>
-                <td mat-cell *matCellDef="let element"> {{element.isActivated}} </td>
-              </ng-container>
-  
-            <ng-container matColumnDef="actions">
-              <th mat-header-cell *matHeaderCellDef> Actions </th>
-              <td mat-cell *matCellDef="let element">
-                <button title="Edit" type="button" class="btn btn-success"(click)="this.edit(element.id)"><i class="fas fa-edit"></i></button>
-                <button title="Delete" type="button" class="btn btn-danger" (click)="this.delete(element.id)"><i class="far fa-trash-alt"></i></button>
-              </td>
-            </ng-container>
-          
-            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-          </table>
-          <mat-paginator #paginator
-          [pageSize]="10"
-          [pageSizeOptions]="[5, 10, 25, 100]">
-          </mat-paginator>
-  
-          
-        </div>
+          <!-- Name Column -->
+          <ng-container matColumnDef="name">
+            <th mat-header-cell mat-sort-header *matHeaderCellDef> Name </th>
+            <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+          </ng-container>
+
+          <!-- Weight Column -->
+          <ng-container matColumnDef="description">
+            <th mat-header-cell mat-sort-header *matHeaderCellDef> Description </th>
+            <td mat-cell *matCellDef="let element"> {{element.description}} </td>
+          </ng-container>
+
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="price">
+            <th mat-header-cell mat-sort-header *matHeaderCellDef> Price </th>
+            <td mat-cell *matCellDef="let element"> {{element.price}} </td>
+          </ng-container>
+
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="stock">
+            <th mat-header-cell mat-sort-header *matHeaderCellDef> Stock </th>
+            <td mat-cell *matCellDef="let element"> {{element.stock}} </td>
+          </ng-container>
+
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="categoryid">
+            <th mat-header-cell mat-sort-header *matHeaderCellDef> Category ID </th>
+            <td mat-cell *matCellDef="let element"> {{element.categoryID}} </td>
+          </ng-container>
+
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="isactivated">
+            <th mat-header-cell mat-sort-header *matHeaderCellDef> is Activated ? </th>
+            <td mat-cell *matCellDef="let element"> {{element.isActivated}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="actions">
+            <th mat-header-cell *matHeaderCellDef> Actions </th>
+            <td mat-cell *matCellDef="let element">
+              <button title="Edit" type="button" class="btn btn-success" (click)="this.edit(element.id)"><i
+                  class="fas fa-edit"></i></button>
+              <button title="Delete" type="button" class="btn btn-danger" (click)="this.delete(element.id)"><i
+                  class="far fa-trash-alt"></i></button>
+            </td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+        <mat-paginator #paginator [pageSize]="10" [pageSizeOptions]="[5, 10, 25, 100]">
+        </mat-paginator>
+
+
       </div>
-      <br>
-      <button title="Add Product" type="button" class="btn btn-success btn-circle btn-xl" (click)="this.openCreate()"><i class="fa-solid fa-circle-plus"></i></button>
     </div>
-  </main>
+    <br>
+    <button title="Add Product" type="button" class="btn btn-success btn-circle btn-xl" (click)="this.openCreate()"><i
+        class="fa-solid fa-circle-plus"></i></button>
+  </div>
+</main>

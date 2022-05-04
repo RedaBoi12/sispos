@@ -8,15 +8,15 @@ import Swal from 'sweetalert2';
 })
 export class AuthGuard implements CanActivate {
   isLogged: boolean = false;
-  constructor(private afAuth: Auth, public router: Router){
-    
+  constructor(private afAuth: Auth, public router: Router) {
+
   }
   async canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Promise<boolean | UrlTree> {
     const user = await this.afAuth.currentUser;
     const isAuthentificated = user ? true : false;
-    if (!isAuthentificated){
+    if (!isAuthentificated) {
       this.router.navigate(['']);
       this.isLogged = false;
       Swal.fire({
@@ -30,5 +30,5 @@ export class AuthGuard implements CanActivate {
     return isAuthentificated;
 
   }
-  
+
 }

@@ -11,10 +11,10 @@ import { OrdersComponent } from './dashboard/orders/orders.component';
 import { ClientsComponent } from './dashboard/clients/clients.component';
 import { CouponsComponent } from './dashboard/coupons/coupons.component';
 import { DashbarComponent } from './shared/dashbar/dashbar.component';
-import { initializeApp , provideFirebaseApp } from '@angular/fire/app';
+import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
-import { provideAuth , getAuth } from '@angular/fire/auth';
-import { FormsModule , ReactiveFormsModule } from '@angular/forms';
+import { provideAuth, getAuth } from '@angular/fire/auth';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CategoriesComponent } from './dashboard/categories/categories.component';
 import { MatTableModule } from '@angular/material/table';
@@ -36,7 +36,7 @@ import { AddcouponComponent } from './dashboard/coupons/addcoupon/addcoupon.comp
 import { OrderComponent } from './dashboard/orders/order/order.component';
 import { AddorderComponent } from './dashboard/orders/addorder/addorder.component';
 import { TasksComponent } from './dashboard/tasks/tasks.component';
-import {DragDropModule} from '@angular/cdk/drag-drop';
+import { DragDropModule } from '@angular/cdk/drag-drop';
 import { AddtaskComponent } from './dashboard/tasks/addtask/addtask.component';
 
 

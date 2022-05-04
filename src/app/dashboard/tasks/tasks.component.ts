@@ -1,7 +1,7 @@
 import { AddtaskComponent } from './addtask/addtask.component';
 import { ApiService } from 'src/app/services/api.service';
 import { Component, Input, OnInit } from '@angular/core';
-import { CdkDragDrop, transferArrayItem} from '@angular/cdk/drag-drop';
+import { CdkDragDrop, transferArrayItem } from '@angular/cdk/drag-drop';
 import { Task } from 'src/app/interfaces/task';
 import { MatDialog } from '@angular/material/dialog';
 import Swal from 'sweetalert2';
@@ -16,31 +16,30 @@ import Swal from 'sweetalert2';
 
 export class TasksComponent implements OnInit {
   @Input('cdkDragData') data: any;
-  
-  completeTasks:any;
-  incompleteTasks:any;
-  
+
+  completeTasks: any;
+  incompleteTasks: any;
+
   constructor(public API: ApiService, private dialog: MatDialog) { }
 
   ngOnInit(): void {
-    this.API.getcompleteTasks().subscribe((res)=>{this.completeTasks = res});
-    this.API.getincompleteTasks().subscribe((res)=>{this.incompleteTasks = res});
+    this.API.getcompleteTasks().subscribe((res) => { this.completeTasks = res });
+    this.API.getincompleteTasks().subscribe((res) => { this.incompleteTasks = res });
   }
 
-  drop(event: CdkDragDrop<Task[]>){
+  drop(event: CdkDragDrop<Task[]>) {
     transferArrayItem(
       event.previousContainer.data,
       event.container.data,
       event.previousIndex,
       event.currentIndex
     );
-    if(event.previousContainer.id != event.container.id)
-    {
-      this.API.editTaskCompletion(event.container.data[event.currentIndex]['id']).subscribe((res)=>{console.log('Change Affected!')});
+    if (event.previousContainer.id != event.container.id) {
+      this.API.editTaskCompletion(event.container.data[event.currentIndex]['id']).subscribe((res) => { console.log('Change Affected!') });
     }
   }
 
-  deleteIncomplete(){
+  deleteIncomplete() {
     Swal.fire({
       title: 'Are you sure?',
       text: "You won't be able to revert this!",
@@ -51,7 +50,7 @@ export class TasksComponent implements OnInit {
       confirmButtonText: 'Yes, delete it!'
     }).then((result) => {
       if (result.isConfirmed) {
-        this.API.deleteCompleteTasks().subscribe(() => {});
+        this.API.deleteCompleteTasks().subscribe(() => { });
         Swal.fire({
           position: 'top-end',
           icon: 'success',
@@ -63,18 +62,18 @@ export class TasksComponent implements OnInit {
     })
   }
 
-    // CREATES CATEGS
-    openCreate(){
-      this.dialog.open(AddtaskComponent, {
-        width: '50%',
-        height: '40%'
-      });
-    }
+  // CREATES CATEGS
+  openCreate() {
+    this.dialog.open(AddtaskComponent, {
+      width: '50%',
+      height: '40%'
+    });
+  }
 
-    changeCompletion(id:number, completion:boolean){
-      if(completion){
-        this.API.editTaskCompletion(id);
-      }
-      else this.API.editTaskCompletion(id);
+  changeCompletion(id: number, completion: boolean) {
+    if (completion) {
+      this.API.editTaskCompletion(id);
     }
+    else this.API.editTaskCompletion(id);
+  }
 }

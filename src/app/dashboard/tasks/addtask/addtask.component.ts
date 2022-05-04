@@ -13,7 +13,7 @@ export class AddtaskComponent implements OnInit {
 
 
   addForm!: FormGroup;
-  categoryids:any;
+  categoryids: any;
 
   constructor(private API: ApiService, public router: Router) {
   }
@@ -24,25 +24,25 @@ export class AddtaskComponent implements OnInit {
       'description': new FormControl()
     })
 
-    this.API.getCategoryIDs().subscribe((response) =>{
+    this.API.getCategoryIDs().subscribe((response) => {
       this.categoryids = response;
     })
   }
 
 
-  create(){
-    let Data:any = {
+  create() {
+    let Data: any = {
       'name': `${this.addForm.get('name')?.value}`,
       'description': `${this.addForm.get('description')?.value}`
     }
-    this.API.addTask(Data).subscribe(()=>{});
-      Swal.fire({
-        position: 'top-end',
-        icon: 'success',
-        title: 'This Category was Added!',
-        showConfirmButton: false,
-        timer: 1500
-      })
+    this.API.addTask(Data).subscribe(() => { });
+    Swal.fire({
+      position: 'top-end',
+      icon: 'success',
+      title: 'This Category was Added!',
+      showConfirmButton: false,
+      timer: 1500
+    })
   }
 
 }

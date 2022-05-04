@@ -1,182 +1,186 @@
 <div class="container-fluid py-4">
-    <div class="row">
-      <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
-        <div class="card">
-          <div class="card-body p-3">
-            <div class="row">
-              <div class="col-8">
-                <div class="numbers">
-                  <p class="text-sm mb-0 text-uppercase font-weight-bold">Products</p>
-                  <h5 class="font-weight-bolder">
-                      <i class="fa-solid fa-arrow-right-long"></i> {{this.productCount}} Products Available
-                  </h5>
-                  <p class="mb-0">
-                    <span class="text-success text-sm font-weight-bolder">+ {{this.latestproducts}}</span>
-                    since yesterday
-                  </p>
-                </div>
-              </div>
-              <div class="col-4 text-end">
-                <div class="icon icon-shape bg-gradient-primary shadow-primary text-center rounded-circle">
-                  <i class="fa-brands fa-apple text-lg opacity-10" aria-hidden="true"></i>
-                </div>
+  <div class="row">
+    <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
+      <div class="card">
+        <div class="card-body p-3">
+          <div class="row">
+            <div class="col-8">
+              <div class="numbers">
+                <p class="text-sm mb-0 text-uppercase font-weight-bold">Products</p>
+                <h5 class="font-weight-bolder">
+                  <i class="fa-solid fa-arrow-right-long"></i> {{this.productCount}} Products Available
+                </h5>
+                <p class="mb-0">
+                  <span class="text-success text-sm font-weight-bolder">+ {{this.latestproducts}}</span>
+                  since yesterday
+                </p>
               </div>
             </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
-        <div class="card">
-          <div class="card-body p-3">
-            <div class="row">
-              <div class="col-8">
-                <div class="numbers">
-                  <p class="text-sm mb-0 text-uppercase font-weight-bold">Clients</p>
-                  <h5 class="font-weight-bolder">
-                      <i class="fa-solid fa-arrow-right-long"></i> {{this.clientCount}} Clients Available
-                  </h5>
-                  <p class="mb-0">
-                    <span class="text-success text-sm font-weight-bolder">+ {{this.latestclients}}</span>
-                    since yesterday
-                  </p>
-                </div>
-              </div>
-              <div class="col-4 text-end">
-                <div class="icon icon-shape bg-gradient-danger shadow-danger text-center rounded-circle">
-                  <i class="fa-solid fa-users text-lg opacity-10" aria-hidden="true"></i>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
-        <div class="card">
-          <div class="card-body p-3">
-            <div class="row">
-              <div class="col-8">
-                <div class="numbers">
-                  <p class="text-sm mb-0 text-uppercase font-weight-bold">Coupons</p>
-                  <h5 class="font-weight-bolder">
-                    <i class="fa-solid fa-arrow-right-long"></i> {{this.couponCount}} Redeemable coupons
-                  </h5>
-                  <p class="mb-0">
-                    <span class="text-danger text-sm font-weight-bolder">- {{this.expiredcoupons}}</span>
-                    expired coupons
-                  </p>
-                </div>
-              </div>
-              <div class="col-4 text-end">
-                <div class="icon icon-shape bg-gradient-success shadow-success text-center rounded-circle">
-                  <i class="fa-solid fa-tags text-lg opacity-10" aria-hidden="true"></i>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-xl-3 col-sm-6">
-        <div class="card">
-          <div class="card-body p-3">
-            <div class="row">
-              <div class="col-8">
-                <div class="numbers">
-                  <p class="text-sm mb-0 text-uppercase font-weight-bold">Sales</p>
-                  <h5 class="font-weight-bolder">
-                    ${{this.sales}}
-                  </h5>
-                  <p class="mb-0">
-                    <span class="text-success text-sm font-weight-bolder">+ ${{this.latestsale}}</span> from the latest sale
-                  </p>
-                </div>
-              </div>
-              <div class="col-4 text-end">
-                <div class="icon icon-shape bg-gradient-warning shadow-warning text-center rounded-circle">
-                  <i class="fa-solid fa-money-bills text-lg opacity-10" aria-hidden="true"></i>
-                </div>
+            <div class="col-4 text-end">
+              <div class="icon icon-shape bg-gradient-primary shadow-primary text-center rounded-circle">
+                <i class="fa-brands fa-apple text-lg opacity-10" aria-hidden="true"></i>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <div class="row mt-4">
-      <div class="col-lg-7 mb-lg-0 mb-4">
-        <div class="card ">
-          <div class="card-header pb-0 p-3">
-            <div class="d-flex justify-content-between">
-              <h6 class="mb-2">Top Countries by Sales</h6>
+    <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
+      <div class="card">
+        <div class="card-body p-3">
+          <div class="row">
+            <div class="col-8">
+              <div class="numbers">
+                <p class="text-sm mb-0 text-uppercase font-weight-bold">Clients</p>
+                <h5 class="font-weight-bolder">
+                  <i class="fa-solid fa-arrow-right-long"></i> {{this.clientCount}} Clients Available
+                </h5>
+                <p class="mb-0">
+                  <span class="text-success text-sm font-weight-bolder">+ {{this.latestclients}}</span>
+                  since yesterday
+                </p>
+              </div>
             </div>
-          </div>
-          <div class="table-responsive">
-            <table class="table align-items-center">
-              <tbody>
-                <tr *ngFor="let country of countrysales">
-                  <td class="w-30">
-                    <div class="d-flex px-2 py-1 align-items-center">
-                      <div>
-                        <!-- onerror="this.src='../../../assets/img/uu.png'" -->
-                        <img width="70px" height="50px" title="{{country.country}} Flag" [src]="'https://countryflagsapi.com/png/'+country.country"  alt="alternative" />
-                      </div>
-                      <div class="ms-4">
-                        <p class="text-xs font-weight-bold mb-0">Country Code:</p>
-                        <h6 class="text-sm mb-0">{{country.country}}</h6>
-                      </div>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="text-center">
-                      <p class="text-xs font-weight-bold mb-0">Sales:</p>
-                      <h6 class="text-sm mb-0">{{country.sales}}</h6>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="text-center">
-                      <p class="text-xs font-weight-bold mb-0">Value:</p>
-                      <h6 class="text-sm mb-0">${{country.total}}</h6>
-                    </div>
-                  </td>
-                  <td class="align-middle text-sm">
-                    <div class="col text-center">
-                      <p class="text-xs font-weight-bold mb-0">Clients:</p>
-                      <h6 class="text-sm mb-0">{{country.clients}}</h6>
-                    </div>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
+            <div class="col-4 text-end">
+              <div class="icon icon-shape bg-gradient-danger shadow-danger text-center rounded-circle">
+                <i class="fa-solid fa-users text-lg opacity-10" aria-hidden="true"></i>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-      <div class="col-lg-5">
-        <div class="card card-carousel overflow-hidden p-0">
-        <div id="captions" class="carousel slide h-100" data-bs-ride="carousel">
-        <div class="carousel-inner border-radius-lg h-100">
-          <div class="card-header pb-0 p-3">
-            <div class="d-flex justify-content-between">
-              <h6 class="mb-2">Modular Charts Slider</h6>
+    </div>
+    <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
+      <div class="card">
+        <div class="card-body p-3">
+          <div class="row">
+            <div class="col-8">
+              <div class="numbers">
+                <p class="text-sm mb-0 text-uppercase font-weight-bold">Coupons</p>
+                <h5 class="font-weight-bolder">
+                  <i class="fa-solid fa-arrow-right-long"></i> {{this.couponCount}} Redeemable coupons
+                </h5>
+                <p class="mb-0">
+                  <span class="text-danger text-sm font-weight-bolder">- {{this.expiredcoupons}}</span>
+                  expired coupons
+                </p>
+              </div>
+            </div>
+            <div class="col-4 text-end">
+              <div class="icon icon-shape bg-gradient-success shadow-success text-center rounded-circle">
+                <i class="fa-solid fa-tags text-lg opacity-10" aria-hidden="true"></i>
+              </div>
             </div>
           </div>
-          <div class="carousel slide h-100" data-bs-ride="carousel">
-            <div class="carousel-inner border-radius-lg h-100">
-              <!-- CAROUSEL ITEM START-->
-                          <div class="carousel-item h-100 active">
-                            <canvas id="clientsChart"></canvas>
-                          </div>
-              <!-- CAROUSEL ITEM END-->
-              <!-- CAROUSEL ITEM START-->
-                          <div class="carousel-item h-100">
-                            <canvas id="ordersChart"></canvas>
-                          </div>
-            <!-- CAROUSEL ITEM END-->
+        </div>
+      </div>
+    </div>
+    <div class="col-xl-3 col-sm-6">
+      <div class="card">
+        <div class="card-body p-3">
+          <div class="row">
+            <div class="col-8">
+              <div class="numbers">
+                <p class="text-sm mb-0 text-uppercase font-weight-bold">Sales</p>
+                <h5 class="font-weight-bolder">
+                  ${{this.sales}}
+                </h5>
+                <p class="mb-0">
+                  <span class="text-success text-sm font-weight-bolder">+ ${{this.latestsale}}</span> from the latest
+                  sale
+                </p>
+              </div>
             </div>
-            <button title="Next Slide" class="carousel-control-next w-5 me-3" type="button" data-bs-target="#captions" data-bs-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"><i class="fa-solid fa-circle-right text-dark"></i></span>
-              </button>
+            <div class="col-4 text-end">
+              <div class="icon icon-shape bg-gradient-warning shadow-warning text-center rounded-circle">
+                <i class="fa-solid fa-money-bills text-lg opacity-10" aria-hidden="true"></i>
+              </div>
             </div>
+          </div>
         </div>
-        </div>
-        </div>
-        </div>
+      </div>
     </div>
   </div>
+  <div class="row mt-4">
+    <div class="col-lg-7 mb-lg-0 mb-4">
+      <div class="card ">
+        <div class="card-header pb-0 p-3">
+          <div class="d-flex justify-content-between">
+            <h6 class="mb-2">Top Countries by Sales</h6>
+          </div>
+        </div>
+        <div class="table-responsive">
+          <table class="table align-items-center">
+            <tbody>
+              <tr *ngFor="let country of countrysales">
+                <td class="w-30">
+                  <div class="d-flex px-2 py-1 align-items-center">
+                    <div>
+                      <img width="70px" height="50px" title="{{country.country}} Flag"
+                        [src]="'https://countryflagsapi.com/png/'+country.country"
+                        onerror="this.src='../../../assets/img/uu.png'" alt="" />
+                    </div>
+                    <div class="ms-4">
+                      <p class="text-xs font-weight-bold mb-0">Country Code:</p>
+                      <h6 class="text-sm mb-0">{{country.country}}</h6>
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  <div class="text-center">
+                    <p class="text-xs font-weight-bold mb-0">Sales:</p>
+                    <h6 class="text-sm mb-0">{{country.sales}}</h6>
+                  </div>
+                </td>
+                <td>
+                  <div class="text-center">
+                    <p class="text-xs font-weight-bold mb-0">Value:</p>
+                    <h6 class="text-sm mb-0">${{country.total}}</h6>
+                  </div>
+                </td>
+                <td class="align-middle text-sm">
+                  <div class="col text-center">
+                    <p class="text-xs font-weight-bold mb-0">Clients:</p>
+                    <h6 class="text-sm mb-0">{{country.clients}}</h6>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-5">
+      <div class="card card-carousel overflow-hidden p-0">
+        <div id="captions" class="carousel slide h-100" data-bs-ride="carousel">
+          <div class="carousel-inner border-radius-lg h-100">
+            <div class="card-header pb-0 p-3">
+              <div class="d-flex justify-content-between">
+                <h6 class="mb-2">Modular Charts Slider</h6>
+              </div>
+            </div>
+            <div class="carousel slide h-100" data-bs-ride="carousel">
+              <div class="carousel-inner border-radius-lg h-100">
+                <!-- CAROUSEL ITEM START-->
+                <div class="carousel-item h-100 active">
+                  <canvas id="clientsChart"></canvas>
+                </div>
+                <!-- CAROUSEL ITEM END-->
+                <!-- CAROUSEL ITEM START-->
+                <div class="carousel-item h-100">
+                  <canvas id="ordersChart"></canvas>
+                </div>
+                <!-- CAROUSEL ITEM END-->
+              </div>
+              <button title="Next Slide" class="carousel-control-next w-5 me-3" type="button" data-bs-target="#captions"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"><i
+                    class="fa-solid fa-circle-right text-dark"></i></span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

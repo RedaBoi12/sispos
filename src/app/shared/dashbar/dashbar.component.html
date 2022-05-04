@@ -77,8 +77,8 @@
         <li class="nav-item mt-3">
           <h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">Manage session</h6>
         </li>
-        <li class="nav-item">
-          <a class="nav-link " (click)="this.aservice.SignOut()">
+        <li class="nav-item" (click)="this.aservice.SignOut()">
+          <a class="nav-link" routerLink="tasks">
             <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
               <i class="fa-solid fa-person-walking-arrow-loop-left text-dark text-sm opacity-10"></i>
             </div>

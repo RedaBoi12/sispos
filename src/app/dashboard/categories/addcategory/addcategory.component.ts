@@ -1,6 +1,5 @@
-import { Component, Inject, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
-import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { ApiService } from 'src/app/services/api.service';
 import Swal from 'sweetalert2';
@@ -18,16 +17,19 @@ export class AddcategoryComponent implements OnInit {
   }
 
   ngOnInit(): void {
+
     this.addForm = new FormGroup({
       'name': new FormControl(),
       'description': new FormControl(),
       'shell': new FormControl(),
       'mother': new FormControl('none')
     })
+
   }
 
 
   create(){
+    // STORE INPUT IN A DATA VARIABLE
     let Data:any = {
       'name': `${this.addForm.get('name')?.value}`,
       'description': `${this.addForm.get('description')?.value}`,
@@ -35,6 +37,8 @@ export class AddcategoryComponent implements OnInit {
       'shell': `${this.addForm.get('shell')?.value}`,
       'motherCategory': `${this.addForm.get('mother')?.value}`
     }
+
+    //LOAD DATA VARIABLE INTO POST REQUEST
     this.API.addCategory(Data).subscribe(()=>{});
       Swal.fire({
         position: 'top-end',
@@ -43,6 +47,7 @@ export class AddcategoryComponent implements OnInit {
         showConfirmButton: false,
         timer: 1500
       })
+
   }
 
 }

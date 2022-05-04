@@ -1,12 +1,12 @@
-label{
+label {
     color: black;
 }
 
-#defaultLoginFormRemember{
+#defaultLoginFormRemember {
     margin-right: 10px;
 }
 
-p{
+p {
     font-weight: lighter;
     align-items: center;
     font-size: 24px;
@@ -15,21 +15,17 @@ p{
     letter-spacing: .1em;
 }
 
-.container{
+.container {
     animation: 1s slide-right forwards;
-    transform:translateX(-100%);
+    transform: translateX(-100%);
 }
 
-.col-md-6{
+.col-md-6 {
     margin-top: 20%;
 }
 
-main{
+main {
     overflow: hidden;
-}
-
-.container{
-    background-color: rgba(0, 0, 0, 0.05);
 }
 
 
@@ -37,6 +33,6 @@ main{
 
 @keyframes slide-right {
     to {
-      transform:translateX(0);
+        transform: translateX(0);
     }
-  }
+}

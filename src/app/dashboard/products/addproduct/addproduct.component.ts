@@ -13,7 +13,7 @@ export class AddproductComponent implements OnInit {
 
 
   addForm!: FormGroup;
-  categoryids:any;
+  categoryids: any;
 
   constructor(private API: ApiService, public router: Router) {
   }
@@ -28,14 +28,14 @@ export class AddproductComponent implements OnInit {
       'isActivated': new FormControl(true)
     })
 
-    this.API.getCategoryIDs().subscribe((response) =>{
+    this.API.getCategoryIDs().subscribe((response) => {
       this.categoryids = response;
     })
   }
 
 
-  create(){
-    let Data:any = {
+  create() {
+    let Data: any = {
       'name': `${this.addForm.get('name')?.value}`,
       'description': `${this.addForm.get('description')?.value}`,
       'price': this.addForm.get('price')?.value,
@@ -43,14 +43,14 @@ export class AddproductComponent implements OnInit {
       'categoryID': this.addForm.get('categoryID')?.value,
       'isActivated': this.addForm.get('isActivated')?.value
     }
-    this.API.addProduct(Data).subscribe(()=>{});
-      Swal.fire({
-        position: 'top-end',
-        icon: 'success',
-        title: 'This Category was Added!',
-        showConfirmButton: false,
-        timer: 1500
-      })
+    this.API.addProduct(Data).subscribe(() => { });
+    Swal.fire({
+      position: 'top-end',
+      icon: 'success',
+      title: 'This Category was Added!',
+      showConfirmButton: false,
+      timer: 1500
+    })
   }
 
 }

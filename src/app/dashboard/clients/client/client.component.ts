@@ -15,13 +15,13 @@ export class ClientComponent implements OnInit {
 
 
   addForm!: FormGroup;
-  plans:any = ['Free', 'Basic', 'Premium', 'Entreprise'];
-  banks:any = ['MasterCard', 'Visa', 'Discover Card'];
-  public countries:any = countries;
-  client:any;
+  plans: any = ['Free', 'Basic', 'Premium', 'Entreprise'];
+  banks: any = ['MasterCard', 'Visa', 'Discover Card'];
+  public countries: any = countries;
+  client: any;
   id: number;
 
-  constructor(private API: ApiService, public router: Router, @Inject(MAT_DIALOG_DATA) public data:any) {
+  constructor(private API: ApiService, public router: Router, @Inject(MAT_DIALOG_DATA) public data: any) {
     this.id = data.id;
   }
 
@@ -46,7 +46,7 @@ export class ClientComponent implements OnInit {
       'isActive': new FormControl(true)
     })
 
-    this.API.getClient(this.id).subscribe((response)=>{
+    this.API.getClient(this.id).subscribe((response) => {
       this.client = response;
 
       this.addForm.get('firstname')?.setValue(this.client[0].firstname || 'none');
@@ -70,8 +70,8 @@ export class ClientComponent implements OnInit {
   }
 
 
-  update(){
-    let Data:any = {
+  update() {
+    let Data: any = {
       'firstname': `${this.addForm.get('firstname')?.value}`,
       'lastname': `${this.addForm.get('lastname')?.value}`,
       'email': `${this.addForm.get('email')?.value}`,
@@ -90,7 +90,7 @@ export class ClientComponent implements OnInit {
 
       'isActive': this.addForm.get('isActive')?.value
     }
-    this.API.updateClient(this.id, Data).subscribe(()=>{});
+    this.API.updateClient(this.id, Data).subscribe(() => { });
     Swal.fire({
       position: 'top-end',
       icon: 'success',

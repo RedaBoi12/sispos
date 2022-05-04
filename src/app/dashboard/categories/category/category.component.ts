@@ -1,4 +1,3 @@
-import { Category } from './../../../interfaces/category';
 import { Component, Inject, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
@@ -21,10 +20,14 @@ export class CategoryComponent implements OnInit {
 
 
   constructor(private API: ApiService, public router: Router, @Inject(MAT_DIALOG_DATA) public data:any) {
+
+    // DATA INJECT FROM CATEGORIES PAGE
     this.id = data.id;
+
   }
 
   ngOnInit(): void {
+
     this.addForm = new FormGroup({
       'name': new FormControl(),
       'description': new FormControl(),
@@ -42,12 +45,15 @@ export class CategoryComponent implements OnInit {
   }
 
   update(){
+
     let Data:any = {
       'name': `${this.addForm.get('name')?.value}`,
       'description': `${this.addForm.get('description')?.value}`,
       'shell': `${this.addForm.get('shell')?.value}`,
       'motherCategory': `${this.addForm.get('mother')?.value}`
     }
+
+
     this.API.updateCategory(this.id, Data).subscribe(()=>{});
     Swal.fire({
       position: 'top-end',
@@ -56,8 +62,8 @@ export class CategoryComponent implements OnInit {
       showConfirmButton: false,
       timer: 1500
     })
+
   }
 
-    
 
 }

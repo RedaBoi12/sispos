@@ -16,30 +16,29 @@ import Swal from 'sweetalert2';
 })
 export class CouponsComponent implements OnInit {
   //TABLE CONTENT
-  displayedColumns= ['id', 'name', 'description', 'expiration', 'actions'];
-  dataSource!:MatTableDataSource<any>;
+  displayedColumns = ['id', 'name', 'description', 'expiration', 'actions'];
+  dataSource!: MatTableDataSource<any>;
 
   //VARIABLES
-  isEditing:boolean = false;
+  isEditing: boolean = false;
 
   @ViewChild('paginator') paginator!: MatPaginator;
   @ViewChild(MatSort) matSort!: MatSort;
 
-  constructor(private API: ApiService, public router: Router, private dialog: MatDialog){}
+  constructor(private API: ApiService, public router: Router, private dialog: MatDialog) { }
 
   ngOnInit(): void {
     this.getCoupons();
   }
 
-  filterData($event: any)
-  {
+  filterData($event: any) {
     this.dataSource.filter = $event.target.value;
   }
 
 
   // GETS CATEGS
-  getCoupons(): void{
-    this.API.getCoupons().subscribe((response) =>{
+  getCoupons(): void {
+    this.API.getCoupons().subscribe((response) => {
       this.dataSource = new MatTableDataSource(response);
       this.dataSource.paginator = this.paginator;
       this.dataSource.sort = this.matSort;
@@ -48,7 +47,7 @@ export class CouponsComponent implements OnInit {
 
 
   // CREATES CATEGS
-  openCreate(){
+  openCreate() {
     this.dialog.open(AddcouponComponent, {
       width: '50%',
       height: '50%'
@@ -57,38 +56,38 @@ export class CouponsComponent implements OnInit {
 
 
   // DELETES CATEG
-  edit(id: number){
+  edit(id: number) {
     this.dialog.open(CouponComponent, {
       width: '50%',
       height: '50%',
-      data:{
+      data: {
         id: id
       }
     });
   }
 
   // DELETES CATEG
-  delete(id: number){
+  delete(id: number) {
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "You won't be able to revert this!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, delete it!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this.API.deleteCoupon(id).subscribe(() => { });
         Swal.fire({
-          title: 'Are you sure?',
-          text: "You won't be able to revert this!",
-          icon: 'warning',
-          showCancelButton: true,
-          confirmButtonColor: '#3085d6',
-          cancelButtonColor: '#d33',
-          confirmButtonText: 'Yes, delete it!'
-        }).then((result) => {
-          if (result.isConfirmed) {
-            this.API.deleteCoupon(id).subscribe(() => {});
-            Swal.fire({
-              position: 'top-end',
-              icon: 'success',
-              title: 'Your work has been saved',
-              showConfirmButton: false,
-              timer: 1500
-            })
-          }
+          position: 'top-end',
+          icon: 'success',
+          title: 'Your work has been saved',
+          showConfirmButton: false,
+          timer: 1500
         })
+      }
+    })
   }
 
 }

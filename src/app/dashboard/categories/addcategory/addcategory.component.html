@@ -1,31 +1,63 @@
-<h2>ADD CATEGORY</h2>
+<h2>Add a Category</h2>
 <hr>
 <div class="container-fluid">
   <form [formGroup]="addForm">
     <fieldset>
-    <div class="mb-3">
+      <div class="mb-3">
+        <br>
+        <label for="name" class="form-label">Name</label>
+
+        <input 
+          formControlName="name" 
+          title="Name" 
+          required 
+          type="text" 
+          class="form-control" 
+          id="name">
+
+        <div id="nameHelp" class="form-text">Make sure this category doesn't already exist.</div>
+        <br>
+        <label for="name" class="form-label">Description</label>
+
+        <select 
+          title="description" 
+          formControlName="description" 
+          class="form-select" 
+          id="description">
+
+          <option value="Mother Category">Mother Category</option>
+          <option value="Child Category">Child Category</option>
+        </select>
+
+        <div id="descriptionHelp" class="form-text">100 Character Length Maximum.</div>
+        <br>
+        <label for="shell" class="form-label">Shell</label>
+
+        <input 
+          formControlName="shell" 
+          title="Shell" 
+          required 
+          type="text" 
+          class="form-control" 
+          id="shell"
+          placeholder="/shell">
+
+        <div id="shellHelp" class="form-text">Make sure to start the shell with a /.</div>
+        <br>
+        <label for="mother" class="form-label">Mother Category</label>
+
+        <input 
+          formControlName="mother" 
+          title="Mother Category" 
+          required 
+          type="text" 
+          class="form-control" 
+          id="mother">
+          
+      </div>
+      <button type="button" (click)="create()" class="btn btn-success">Add</button>
       <br>
-      <label for="name" class="form-label">Name</label>
-      <input formControlName="name" title="Name" required type="text" class="form-control" id="name">
-      <div id="nameHelp" class="form-text">Make sure this category doesn't already exist.</div>
-      <br>
-      <label for="name" class="form-label">Description</label>
-      <select title="description" formControlName="description" class="form-select" id="description">
-        <option value="Mother Category">Mother Category</option>
-        <option value="Child Category">Child Category</option>
-      </select>
-      <div id="descriptionHelp" class="form-text">100 Character Length Maximum.</div>
-      <br>
-      <label for="shell" class="form-label">Shell</label>
-      <input formControlName="shell" title="Shell" required type="text" class="form-control" id="shell" placeholder="/shell">
-      <div id="shellHelp" class="form-text">Make sure to start the shell with a /.</div>
-      <br>
-      <label for="mother" class="form-label">Mother Category</label>
-      <input formControlName="mother" title="Mother Category" required type="text" class="form-control" id="mother">
-    </div>
-    <button type="button" (click)="create()" class="btn btn-success">Add</button>
-    <br>
-  </fieldset>
+    </fieldset>
   </form>
 </div>
 <hr>

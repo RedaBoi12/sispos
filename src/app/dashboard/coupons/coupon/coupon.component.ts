@@ -15,11 +15,11 @@ export class CouponComponent implements OnInit {
   //definitions
   addForm!: FormGroup;
   id: number;
-  coupon!:any;
-  isUnlimited:boolean = true;
+  coupon!: any;
+  isUnlimited: boolean = true;
 
 
-  constructor(private API: ApiService, public router: Router, @Inject(MAT_DIALOG_DATA) public data:any) {
+  constructor(private API: ApiService, public router: Router, @Inject(MAT_DIALOG_DATA) public data: any) {
     this.id = data.id;
   }
 
@@ -31,7 +31,7 @@ export class CouponComponent implements OnInit {
       'expiration': new FormControl()
     })
 
-    this.API.getCoupon(this.id).subscribe((response)=>{
+    this.API.getCoupon(this.id).subscribe((response) => {
       this.coupon = response;
       this.addForm.get('name')?.setValue(this.coupon[0].name);
       this.addForm.get('description')?.setValue(this.coupon[0].description);
@@ -39,35 +39,33 @@ export class CouponComponent implements OnInit {
     })
   }
 
-  changeEvent(){
+  changeEvent() {
     this.isUnlimited = !this.isUnlimited;
   }
 
-  update(){
-    if(this.isUnlimited)
-    {
-          let Data:any = {
-            'name': `${this.addForm.get('name')?.value}`,
-            'description': `${this.addForm.get('description')?.value}`,
-            'expiration': `2099-12-12 10:47:24.752827`,
-          }
-          this.API.updateCoupon(this.id, Data).subscribe(()=>{});
-          Swal.fire({
-            position: 'top-end',
-            icon: 'success',
-            title: 'This Coupon was Updated!',
-            showConfirmButton: false,
-            timer: 1500
-          })
+  update() {
+    if (this.isUnlimited) {
+      let Data: any = {
+        'name': `${this.addForm.get('name')?.value}`,
+        'description': `${this.addForm.get('description')?.value}`,
+        'expiration': `2099-12-12 10:47:24.752827`,
+      }
+      this.API.updateCoupon(this.id, Data).subscribe(() => { });
+      Swal.fire({
+        position: 'top-end',
+        icon: 'success',
+        title: 'This Coupon was Updated!',
+        showConfirmButton: false,
+        timer: 1500
+      })
     }
-    else
-    {
-      let Data:any = {
+    else {
+      let Data: any = {
         'name': `${this.addForm.get('name')?.value}`,
         'description': `${this.addForm.get('description')?.value}`,
         'expiration': `${this.addForm.get('expiration')?.value}`,
       }
-      this.API.updateCoupon(this.id, Data).subscribe(()=>{});
+      this.API.updateCoupon(this.id, Data).subscribe(() => { });
       Swal.fire({
         position: 'top-end',
         icon: 'success',
@@ -80,6 +78,6 @@ export class CouponComponent implements OnInit {
 
   }
 
-    
+
 
 }

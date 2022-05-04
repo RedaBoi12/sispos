@@ -15,11 +15,11 @@ export class ProductComponent implements OnInit {
   //definitions
   addForm!: FormGroup;
   id: number;
-  product!:any;
-  categoryids:any;
+  product!: any;
+  categoryids: any;
 
 
-  constructor(private API: ApiService, public router: Router, @Inject(MAT_DIALOG_DATA) public data:any) {
+  constructor(private API: ApiService, public router: Router, @Inject(MAT_DIALOG_DATA) public data: any) {
     this.id = data.id;
   }
 
@@ -32,7 +32,7 @@ export class ProductComponent implements OnInit {
       'categoryID': new FormControl(),
       'isActivated': new FormControl()
     })
-    this.API.getProduct(this.id).subscribe((response)=>{
+    this.API.getProduct(this.id).subscribe((response) => {
       this.product = response;
       this.addForm.get('name')?.setValue(this.product[0].name);
       this.addForm.get('description')?.setValue(this.product[0].description);
@@ -42,14 +42,14 @@ export class ProductComponent implements OnInit {
       this.addForm.get('isActivated')?.setValue(this.product[0].isActivated);
     })
 
-    this.API.getCategoryIDs().subscribe((response) =>{
+    this.API.getCategoryIDs().subscribe((response) => {
       this.categoryids = response;
     })
   }
 
 
-  update(){
-    let Data:any = {
+  update() {
+    let Data: any = {
       'name': `${this.addForm.get('name')?.value}`,
       'description': `${this.addForm.get('description')?.value}`,
       'price': this.addForm.get('price')?.value,
@@ -57,7 +57,7 @@ export class ProductComponent implements OnInit {
       'categoryID': this.addForm.get('categoryID')?.value,
       'isActivated': this.addForm.get('isActivated')?.value
     }
-    this.API.updateProduct(this.id, Data).subscribe(()=>{});
+    this.API.updateProduct(this.id, Data).subscribe(() => { });
     Swal.fire({
       position: 'top-end',
       icon: 'success',
@@ -67,6 +67,6 @@ export class ProductComponent implements OnInit {
     })
   }
 
-    
+
 
 }

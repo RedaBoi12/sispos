@@ -13,9 +13,9 @@ export class AddorderComponent implements OnInit {
 
 
   addForm!: FormGroup;
-  clients:any;
-  coupons:any;
-  status:any = ['complete', 'processing', 'cancelled'];
+  clients: any;
+  coupons: any;
+  status: any = ['complete', 'processing', 'cancelled'];
 
 
   constructor(private API: ApiService, public router: Router) {
@@ -30,17 +30,17 @@ export class AddorderComponent implements OnInit {
       'total': new FormControl()
     })
 
-    this.API.getClientIDs().subscribe((response)=>{
+    this.API.getClientIDs().subscribe((response) => {
       this.clients = response;
     })
-    this.API.getCouponIDs().subscribe((response)=>{
+    this.API.getCouponIDs().subscribe((response) => {
       this.coupons = response;
     })
   }
 
 
-  create(){
-    let Data:any = {
+  create() {
+    let Data: any = {
       'client': this.addForm.get('client')?.value,
       'products': `${this.addForm.get('products')?.value}`,
       'couponused': this.addForm.get('couponused')?.value,
@@ -48,14 +48,14 @@ export class AddorderComponent implements OnInit {
       'total': this.addForm.get('total')?.value,
     }
     console.log(Data)
-    this.API.addOrder(Data).subscribe(()=>{});
-      Swal.fire({
-        position: 'top-end',
-        icon: 'success',
-        title: 'This Client was Added!',
-        showConfirmButton: false,
-        timer: 1500
-      })
+    this.API.addOrder(Data).subscribe(() => { });
+    Swal.fire({
+      position: 'top-end',
+      icon: 'success',
+      title: 'This Client was Added!',
+      showConfirmButton: false,
+      timer: 1500
+    })
   }
 
 }
