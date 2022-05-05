@@ -8,8 +8,8 @@ Clean POS Dashboard made using the PEAN Stack.
 <br><br>
 ## Technologies
 
-- Front-end: Angular, Angular Material, Bootstrap 
-- Back-end: PostgreSQL, Express, Node.js
+- Front-end: [Angular](https://angular.io), [Angular Material](https://material.angular.io), [Bootstrap](https://getbootstrap.com), [sweetalert2](https://sweetalert2.github.io)
+- Back-end: [PostgreSQL](https://www.postgresql.org), [Express](https://expressjs.com), [Node.js](https://nodejs.org/en/)
 - APIs: [sisapi](https://github.com/RedaBoi12/sisapi), [countryflagsapi](https://countryflagsapi.com)
 
 <br><br>
