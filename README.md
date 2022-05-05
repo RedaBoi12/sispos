@@ -5,7 +5,14 @@
 # SISPOS DASHBOARD
 
 Clean POS Dashboard made using the PEAN Stack.  
+<br><br>
+## Technologies
 
+- Front-end: Angular, Angular Material, Bootstrap 
+- Back-end: PostgreSQL, Express, Node.js
+- APIs: [sisapi](https://github.com/RedaBoi12/sisapi), [countryflagsapi](https://countryflagsapi.com)
+
+<br><br>
 ## Features
 
 - Locally stored data (Postgres)  
