@@ -1,5 +1,5 @@
 
-![Logo](./src/assets/img/logo.png)
+![Logo](./src/assets/img/favicon.png)
 
 
 # SISPOS DASHBOARD
