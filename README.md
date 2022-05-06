@@ -79,13 +79,9 @@ Sispos uses [SISAPI](https://github.com/RedaBoi12/sisapi) P.E.N API for all data
  <br><br><br><br>
 ## Test online
 
-
- 1) Clone the project in a directory
+ https://sispos-dashboard.herokuapp.com
 <br><br><br><br>
 ## Run Locally
-
-
- https://sispos-dashboard.herokuapp.com
 
 ```bash
   git clone https://github.com/RedaBoi12/sispos.git
