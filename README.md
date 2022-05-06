@@ -10,12 +10,13 @@ Clean POS Dashboard made using the PEAN Stack.
 
 - Front-end: [Angular](https://angular.io), [Angular Material](https://material.angular.io), [Bootstrap](https://getbootstrap.com), [sweetalert2](https://sweetalert2.github.io)
 - Back-end: [PostgreSQL](https://www.postgresql.org), [Express](https://expressjs.com), [Node.js](https://nodejs.org/en/)
-- APIs: [sisapi](https://github.com/RedaBoi12/sisapi), [countryflagsapi](https://countryflagsapi.com)
+- APIs: [SISAPI](https://sispos-api.herokuapp.com), [countryflagsapi](https://countryflagsapi.com)
 
 <br><br>
 ## Features
 
 - Locally stored data (Postgres)  
+- Personal API
 - Fast & Simple  
 - Easy to deploy
 - Full Data C.R.U.D 
@@ -76,9 +77,6 @@ Sispos uses [SISAPI](https://github.com/RedaBoi12/sisapi) P.E.N API for all data
   
 <br><br><br><br>
 ## Run Locally
-
-- Make sure to complete the instalation for SisAPI before starting 
-  here or else the project won't work
 
 
  1) Clone the project in a directory
