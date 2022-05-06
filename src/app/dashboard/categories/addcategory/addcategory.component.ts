@@ -12,6 +12,8 @@ import Swal from 'sweetalert2';
 export class AddcategoryComponent implements OnInit {
 
   addForm!: FormGroup;
+  isChild:boolean = false;
+  motherIDs:any;
 
   constructor(private API: ApiService, public router: Router) {
   }
@@ -22,20 +24,25 @@ export class AddcategoryComponent implements OnInit {
       'name': new FormControl(),
       'description': new FormControl(),
       'shell': new FormControl(),
-      'mother': new FormControl('none')
+      'ismother': new FormControl(),
+      'mother': new FormControl()
     })
+    this.API.getCategoryIDs().subscribe((res)=>this.motherIDs = res);
 
   }
 
+  changeType(){
+    this.isChild = !this.isChild;
+  }
 
   create(){
     // STORE INPUT IN A DATA VARIABLE
     let Data:any = {
       'name': `${this.addForm.get('name')?.value}`,
       'description': `${this.addForm.get('description')?.value}`,
-      'createdat': `${Date()}`,
       'shell': `${this.addForm.get('shell')?.value}`,
-      'motherCategory': `${this.addForm.get('mother')?.value}`
+      'isChild': `${this.isChild}`,
+      'motherID': `${this.addForm.get('mother')?.value}`
     }
 
     //LOAD DATA VARIABLE INTO POST REQUEST

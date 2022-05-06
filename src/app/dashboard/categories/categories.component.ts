@@ -9,8 +9,13 @@ import { MatDialog } from '@angular/material/dialog';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
-import { animate, state, style, transition, trigger } from '@angular/animations';
-
+import {
+  animate,
+  state,
+  style,
+  transition,
+  trigger,
+} from '@angular/animations';
 
 @Component({
   selector: 'app-categories',
@@ -20,13 +25,23 @@ import { animate, state, style, transition, trigger } from '@angular/animations'
     trigger('detailExpand', [
       state('collapsed', style({ height: '0px', minHeight: '0' })),
       state('expanded', style({ height: '*' })),
-      transition('expanded <=> collapsed', animate('225ms cubic-bezier(0.4, 0.0, 0.2, 1)')),
+      transition(
+        'expanded <=> collapsed',
+        animate('225ms cubic-bezier(0.4, 0.0, 0.2, 1)')
+      ),
     ]),
   ],
 })
 export class CategoriesComponent implements OnInit {
   //TABLE CONTENT
-  displayedColumns = ['id', 'name', 'description', 'shell', 'createdat', 'actions'];
+  displayedColumns = [
+    'id',
+    'name',
+    'description',
+    'shell',
+    'createdat',
+    'actions',
+  ];
   dataSource!: MatTableDataSource<any>;
   expandedElement!: Category | null;
   //VARIABLES
@@ -35,7 +50,11 @@ export class CategoriesComponent implements OnInit {
   @ViewChild('paginator') paginator!: MatPaginator;
   @ViewChild(MatSort) matSort!: MatSort;
 
-  constructor(private API: ApiService, public router: Router, private dialog: MatDialog) { }
+  constructor(
+    private API: ApiService,
+    public router: Router,
+    private dialog: MatDialog
+  ) {}
 
   ngOnInit(): void {
     this.getCategories();
@@ -45,25 +64,22 @@ export class CategoriesComponent implements OnInit {
     this.dataSource.filter = $event.target.value;
   }
 
-
   // GETS CATEGS
   getCategories(): void {
     this.API.getCategories().subscribe((response) => {
       this.dataSource = new MatTableDataSource(response);
       this.dataSource.paginator = this.paginator;
       this.dataSource.sort = this.matSort;
-    })
+    });
   }
-
 
   // CREATES CATEGS
   openCreate() {
     this.dialog.open(AddcategoryComponent, {
       width: '50%',
-      height: '70%'
+      height: '70%',
     });
   }
-
 
   // DELETES CATEG
   edit(id: number) {
@@ -71,8 +87,8 @@ export class CategoriesComponent implements OnInit {
       width: '50%',
       height: '70%',
       data: {
-        id: id
-      }
+        id: id,
+      },
     });
   }
 
@@ -85,19 +101,18 @@ export class CategoriesComponent implements OnInit {
       showCancelButton: true,
       confirmButtonColor: '#3085d6',
       cancelButtonColor: '#d33',
-      confirmButtonText: 'Yes, delete it!'
+      confirmButtonText: 'Yes, delete it!',
     }).then((result) => {
       if (result.isConfirmed) {
-        this.API.deleteCategory(id).subscribe(() => { });
+        this.API.deleteCategory(id).subscribe(() => {});
         Swal.fire({
           position: 'top-end',
           icon: 'success',
           title: 'Your work has been saved',
           showConfirmButton: false,
-          timer: 1500
-        })
+          timer: 1500,
+        });
       }
-    })
+    });
   }
-
 }

@@ -1,39 +1,25 @@
 <main>
-  <div class="container my-5 py-5 z-depth-1">
-    <section class="px-md-5 mx-md-5 text-center text-lg-left dark-grey-text">
-      <div class="row d-flex justify-content-center">
-        <div class="col-md-6">
-          <form [formGroup]="loginForm" class="text-center" action="#!" (submit)="login()">
-            <p class="h4 mb-4">Sign in</p>
-            
-            <input
-             formControlName="login" 
-             type="email" 
-             name="email" 
-             id="defaultLoginFormEmail"
-             class="form-control mb-4" 
-             placeholder="E-mail">
-          
-            <input
-             matInput
-             formControlName="password" 
-             type="password" 
-             [type]="hide ? 'password':'text'"
-             name="password" 
-             id="defaultLoginFormPassword"
-             class="form-control mb-4" 
-             placeholder="Password">
-             <i matSuffix class="fa-solid {{hide? 'fa-eye':'fa-eye-slash'}}" (click)="hide = !hide" title="{{hide? 'Show Password':'Hide Password'}}"></i>
+    <div class="container my-5 py-5 z-depth-1">
+        <section class="px-md-5 mx-md-5 text-center text-lg-left dark-grey-text">
+            <div class="row d-flex justify-content-center">
+                <div class="col-md-6">
+                    <form [formGroup]="loginForm" class="text-center" action="#!" (submit)="login()">
+                        <p class="h4 mb-4">Sign in</p>
 
-             <br>
-            <button class="btn btn-dark btn-block my-4" type="submit">Sign in</button>
-          </form>
-          <label class="custom-control-label" for="defaultLoginFormRemember">Contact <a rel="noopener"
+                        <input formControlName="login" type="email" name="email" id="defaultLoginFormEmail" class="form-control mb-4" placeholder="E-mail">
+
+                        <input matInput formControlName="password" type="password" [type]="hide ? 'password':'text'" name="password" id="defaultLoginFormPassword" class="form-control mb-4" placeholder="Password">
+                        <i matSuffix class="fa-solid {{hide? 'fa-eye':'fa-eye-slash'}}" (click)="hide = !hide" title="{{hide? 'Show Password':'Hide Password'}}"></i>
+
+                        <br>
+                        <button class="btn btn-dark btn-block my-4" type="submit">Sign in</button>
+                    </form>
+                    <label class="custom-control-label" for="defaultLoginFormRemember">Contact <a rel="noopener"
               href="https://sispay.net/sispay/index.html#contact" target="_blank">@Customer Support</a> for login
             details.</label>
-        </div>
-      </div>
-    </section>
+                </div>
+            </div>
+        </section>
 
-  </div>
+    </div>
 </main>

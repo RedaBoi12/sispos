@@ -47,7 +47,6 @@ export class AddorderComponent implements OnInit {
       'status': `${this.addForm.get('status')?.value}`,
       'total': this.addForm.get('total')?.value,
     }
-    console.log(Data)
     this.API.addOrder(Data).subscribe(() => { });
     Swal.fire({
       position: 'top-end',

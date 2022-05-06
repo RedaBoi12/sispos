@@ -35,7 +35,7 @@ export class TasksComponent implements OnInit {
       event.currentIndex
     );
     if (event.previousContainer.id != event.container.id) {
-      this.API.editTaskCompletion(event.container.data[event.currentIndex]['id']).subscribe((res) => { console.log('Change Affected!') });
+      this.API.editTaskCompletion(event.container.data[event.currentIndex]['id']).subscribe();
     }
   }
 

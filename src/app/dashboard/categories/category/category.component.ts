@@ -14,6 +14,7 @@ export class CategoryComponent implements OnInit {
 
   //definitions
   addForm!: FormGroup;
+  motherIDs:any;
   id: number;
   category!:any;
   isChild:boolean = false;
@@ -32,7 +33,8 @@ export class CategoryComponent implements OnInit {
       'name': new FormControl(),
       'description': new FormControl(),
       'shell': new FormControl(),
-      'mother': new FormControl()
+      'ismother': new FormControl(),
+      'mother': new FormControl(),
     })
 
     this.API.getCategory(this.id).subscribe((response)=>{
@@ -40,8 +42,8 @@ export class CategoryComponent implements OnInit {
       this.addForm.get('name')?.setValue(this.category[0].name);
       this.addForm.get('description')?.setValue(this.category[0].description);
       this.addForm.get('shell')?.setValue(this.category[0].shell);
-      this.addForm.get('mother')?.setValue(this.category[0].motherCategory);
     })
+    this.API.getCategoryIDs().subscribe((res)=>this.motherIDs = res);
   }
 
   update(){
@@ -49,8 +51,7 @@ export class CategoryComponent implements OnInit {
     let Data:any = {
       'name': `${this.addForm.get('name')?.value}`,
       'description': `${this.addForm.get('description')?.value}`,
-      'shell': `${this.addForm.get('shell')?.value}`,
-      'motherCategory': `${this.addForm.get('mother')?.value}`
+      'shell': `${this.addForm.get('shell')?.value}`
     }
 
 

@@ -19,15 +19,15 @@
         <br>
         <label for="name" class="form-label">Description</label>
 
-        <select 
-          title="description" 
-          formControlName="description" 
-          class="form-select" 
-          id="description">
-
-          <option value="Mother Category">Mother Category</option>
-          <option value="Child Category">Child Category</option>
-        </select>
+        <textarea 
+        maxlength="100"
+        rows="2"
+        formControlName="description" 
+        title="Description"
+        class="form-control" 
+        placeholder="Enter Category Description"
+        id="description">
+      </textarea>
 
         <div id="descriptionHelp" class="form-text">100 Character Length Maximum.</div>
         <br>
@@ -43,17 +43,17 @@
           placeholder="/shell">
 
         <div id="shellHelp" class="form-text">Make sure to start the shell with a /.</div>
-        <br>
-        <label for="mother" class="form-label">Mother Category</label>
 
-        <input 
-          formControlName="mother" 
-          title="Mother Category" 
-          required 
-          type="text" 
-          class="form-control" 
-          id="mother">
-          
+        <br>
+
+        <input formControlName="ismother" title="is it a Mother Category?" checked type="checkbox" class="form-check" id="mother" (click)="changeType()">
+        <label for="mother" class="form-label">a {{this.isChild? 'Child':'Mother'}} Category</label>
+        <div *ngIf="isChild">
+          <select title="Mother Category" formControlName="mother" class="form-select" id="mothername">
+            <option value="-1">-- Select Mother Category --</option>
+            <option *ngFor="let mother of motherIDs" value="mother.id">{{mother.id}}</option>
+          </select>
+        </div>
       </div>
       <button type="button" (click)="create()" class="btn btn-success">Add</button>
       <br>
