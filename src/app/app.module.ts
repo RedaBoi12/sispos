@@ -38,6 +38,9 @@ import { AddorderComponent } from './dashboard/orders/addorder/addorder.componen
 import { TasksComponent } from './dashboard/tasks/tasks.component';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { AddtaskComponent } from './dashboard/tasks/addtask/addtask.component';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatIconModule } from '@angular/material/icon';
+import { MatSidenavModule } from '@angular/material/sidenav';
 
 
 @NgModule({
@@ -69,7 +72,10 @@ import { AddtaskComponent } from './dashboard/tasks/addtask/addtask.component';
     BrowserModule,
     MatTableModule,
     FormsModule,
+    MatSidenavModule,
     MatPaginatorModule,
+    MatIconModule,
+    MatToolbarModule,
     MatSortModule,
     MatInputModule,
     MatListModule,

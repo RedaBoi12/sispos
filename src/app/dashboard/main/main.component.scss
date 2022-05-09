@@ -1,127 +1,126 @@
 .container {
-  margin: 50px;
+    margin: 50px;
 }
 
-
 .card-counter {
-  box-shadow: 2px 2px 10px #DADADA;
-  margin: 5px;
-  padding: 20px 10px;
-  background-color: #fff;
-  height: 100px;
-  border-radius: 5px;
-  transition: .3s linear all;
+    box-shadow: 2px 2px 10px #DADADA;
+    margin: 5px;
+    padding: 20px 10px;
+    background-color: #fff;
+    height: 100px;
+    border-radius: 5px;
+    transition: .3s linear all;
 }
 
 .card-counter:hover {
-  box-shadow: 4px 4px 20px #DADADA;
-  transition: .3s linear all;
+    box-shadow: 4px 4px 20px #DADADA;
+    transition: .3s linear all;
 }
 
 .card-counter.primary {
-  background: #8E2DE2;
-  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to bottom, #4A00E0, #8E2DE2);
-  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to bottom, #4A00E0, #8E2DE2);
-  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
-  color: #FFF;
+    background: #8E2DE2;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom, #4A00E0, #8E2DE2);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom, #4A00E0, #8E2DE2);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    color: #FFF;
 }
 
 .card-counter.warning {
-  background: #f12711;
-  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to top, #f5af19, #f12711);
-  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to top, #f5af19, #f12711);
-  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
-  color: #FFF;
+    background: #f12711;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to top, #f5af19, #f12711);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to top, #f5af19, #f12711);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    color: #FFF;
 }
 
 .card-counter.light {
-  background: #a8ff78;
-  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to top, #78ffd6, #a8ff78);
-  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to top, #78ffd6, #a8ff78);
-  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
-  color: #000;
+    background: #a8ff78;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to top, #78ffd6, #a8ff78);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to top, #78ffd6, #a8ff78);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    color: #000;
 }
 
 .card-counter.info {
-  background: #59C173;
-  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to bottom, #5D26C1, #a17fe0, #59C173);
-  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to bottom, #5D26C1, #a17fe0, #59C173);
-  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
-  color: #FFF;
+    background: #59C173;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom, #5D26C1, #a17fe0, #59C173);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom, #5D26C1, #a17fe0, #59C173);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    color: #FFF;
 }
 
 .card-counter.danger {
-  background: #ED213A;
-  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to bottom, #93291E, #ED213A);
-  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to bottom, #93291E, #ED213A);
-  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
-  color: #FFF;
+    background: #ED213A;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom, #93291E, #ED213A);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom, #93291E, #ED213A);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    color: #FFF;
 }
 
 .card-counter.success1 {
-  background: #005AA7;
-  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to top, #FFFDE4, #005AA7);
-  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to top, #FFFDE4, #005AA7);
-  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
-  color: #000;
+    background: #005AA7;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to top, #FFFDE4, #005AA7);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to top, #FFFDE4, #005AA7);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    color: #000;
 }
 
 .card-counter.success2 {
-  background: #0cebeb;
-  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to bottom, #29ffc6, #20e3b2, #0cebeb);
-  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to bottom, #29ffc6, #20e3b2, #0cebeb);
-  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
-  color: #000;
+    background: #0cebeb;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom, #29ffc6, #20e3b2, #0cebeb);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom, #29ffc6, #20e3b2, #0cebeb);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    color: #000;
 }
 
 .card-counter.secondary {
-  background: #00B4DB;
-  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to top, #0083B0, #00B4DB);
-  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to top, #0083B0, #00B4DB);
-  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
-  color: #FFF;
+    background: #00B4DB;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to top, #0083B0, #00B4DB);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to top, #0083B0, #00B4DB);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    color: #FFF;
 }
 
 .card-counter i {
-  font-size: 5em;
-  opacity: 0.2;
+    font-size: 5em;
+    opacity: 0.2;
 }
 
 .card-counter .count-numbers {
-  right: 35px;
-
-  font-size: 32px;
+    right: 35px;
+    font-size: 32px;
 }
 
 .card-counter .count-name {
-  right: 35px;
+    right: 35px;
+    font-style: italic;
+    text-transform: capitalize;
+    opacity: 0.5;
+    font-size: 18px;
+}
 
-  font-style: italic;
-  text-transform: capitalize;
-  opacity: 0.5;
-  font-size: 18px;
+.card-carousel {
+    height: 100% !important;
+    width: 100% !important;
+}
+
+canvas {
+    height: calc(90%) !important;
+    width: calc(90%) !important;
 }
