@@ -8,7 +8,7 @@ import { catchError } from 'rxjs/operators';
 import { Coupon } from '../interfaces/coupon';
 import { Order } from '../interfaces/order';
 
-const endpoint = 'https://sispos-api.herokuapp.com/';
+const endpoint = 'https://sisapi-dashboard.herokuapp.com/';
 
 @Injectable({
   providedIn: 'root'
