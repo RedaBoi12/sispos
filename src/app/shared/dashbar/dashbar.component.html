@@ -52,7 +52,8 @@
 
     <mat-sidenav-content>
         <div class="content mat-elevation-z8 bg-sky content">
-            <button class="fa fa-bars btn btn-dark" title="Expand" mat-icon-button *ngIf="sidenav.mode === 'over'" (click)="sidenav.toggle()"></button>
+            <button class="fa fa-bars btn btn-toggle-dash" title="Expand" mat-icon-button *ngIf="sidenav.mode === 'over'" (click)="sidenav.toggle()"></button>
+            <br><br>
             <router-outlet></router-outlet>
         </div>
     </mat-sidenav-content>
