@@ -55,7 +55,7 @@ export class CategoriesComponent implements OnInit {
 
   // GETS CATEGS
   getCategories(): void {
-    this.API.getCategories().subscribe((response) => {
+    this.API.getMotherCategories().subscribe((response) => {
       this.dataSource = new MatTableDataSource(response);
       this.dataSource.paginator = this.paginator;
       this.dataSource.sort = this.matSort;

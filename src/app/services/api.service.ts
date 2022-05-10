@@ -110,6 +110,18 @@ export class ApiService {
     );
   }
 
+  getMotherCategories(): Observable<any> {
+    return this.http.get<Category>(endpoint + 'categories/mothers').pipe(
+      catchError(this.handleError)
+    );
+  }
+
+  getChildrenCategories(): Observable<any> {
+    return this.http.get<Category>(endpoint + 'categories/children').pipe(
+      catchError(this.handleError)
+    );
+  }
+
   getCategoryNames(): Observable<any> {
     return this.http.get(endpoint + 'categories/names').pipe(
       catchError(this.handleError)
