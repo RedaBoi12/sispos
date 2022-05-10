@@ -1,7 +1,7 @@
 export interface Order {
     client: number,
     ordertime: string,
-    couponsued: number,
+    couponused: number,
     status: string,
 
     products: string,

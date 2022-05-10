@@ -9,13 +9,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
-import {
-  animate,
-  state,
-  style,
-  transition,
-  trigger,
-} from '@angular/animations';
+import { animate, state, style, transition, trigger } from '@angular/animations';
 
 @Component({
   selector: 'app-categories',
@@ -34,16 +28,11 @@ import {
 })
 export class CategoriesComponent implements OnInit {
   //TABLE CONTENT
-  displayedColumns = [
-    'id',
-    'name',
-    'description',
-    'shell',
-    'createdat',
-    'actions',
-  ];
+  displayedColumns = ['id', 'name', 'description', 'shell', 'createdat', 'actions'];
+
   dataSource!: MatTableDataSource<any>;
   expandedElement!: Category | null;
+  children?: Array<Category>;
   //VARIABLES
   isEditing: boolean = false;
 
@@ -51,10 +40,10 @@ export class CategoriesComponent implements OnInit {
   @ViewChild(MatSort) matSort!: MatSort;
 
   constructor(
-    private API: ApiService,
+    public API: ApiService,
     public router: Router,
     private dialog: MatDialog
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     this.getCategories();
@@ -71,6 +60,10 @@ export class CategoriesComponent implements OnInit {
       this.dataSource.paginator = this.paginator;
       this.dataSource.sort = this.matSort;
     });
+  }
+
+  checkChildren(id: number) {
+    this.API.getCategoryChildren(id).subscribe((res) => this.children = res);
   }
 
   // CREATES CATEGS
@@ -104,7 +97,7 @@ export class CategoriesComponent implements OnInit {
       confirmButtonText: 'Yes, delete it!',
     }).then((result) => {
       if (result.isConfirmed) {
-        this.API.deleteCategory(id).subscribe(() => {});
+        this.API.deleteCategory(id).subscribe(() => { });
         Swal.fire({
           position: 'top-end',
           icon: 'success',

@@ -1,33 +1,32 @@
 <h2>Category ID: {{this.id}} (View/Edit)</h2>
 <hr>
 <div class="container-fluid">
-  <form [formGroup]="addForm">
-    <fieldset>
-      <div class="mb-3">
-        <br>
-        <label for="name" class="form-label">Name</label>
+    <form [formGroup]="addForm">
+        <fieldset>
+            <div class="mb-3">
+                <br>
+                <label for="name" class="form-label">Name</label>
 
-        <input formControlName="name" title="Name" required type="text" class="form-control" id="name">
+                <input formControlName="name" title="Name" required type="text" class="form-control" id="name">
 
-        <br>
-        <label for="name" class="form-label">Description</label>
+                <br>
+                <label for="name" class="form-label">Description</label>
 
-        <textarea maxlength="100" rows="2" formControlName="description" title="Description" class="form-control"
-          placeholder="Enter Category Description" id="description">
+                <textarea maxlength="100" rows="2" formControlName="description" title="Description" class="form-control" placeholder="Enter Category Description" id="description">
       </textarea>
 
-        <div id="descriptionHelp" class="form-text">100 Character Length Maximum.</div>
-        <br>
-        <label for="shell" class="form-label">Shell</label>
+                <div id="descriptionHelp" class="form-text">100 Character Length Maximum.</div>
+                <br>
+                <label for="shell" class="form-label">Shell</label>
 
-        <input formControlName="shell" title="Shell" required type="text" class="form-control" id="shell">
+                <input formControlName="shell" title="Shell" required type="text" class="form-control" id="shell">
 
-        <br>
+                <br>
 
-      </div>
-      <button type="button" class="btn btn-success" (click)="update()">Update</button>
-      <br>
-    </fieldset>
-  </form>
+            </div>
+            <button type="button" class="btn btn-success container-fluid" (click)="update()">Update</button>
+            <br>
+        </fieldset>
+    </form>
 </div>
 <hr>

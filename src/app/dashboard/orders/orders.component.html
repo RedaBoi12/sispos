@@ -1,77 +1,73 @@
 <main>
-  <br>
-  <div class="container">
-    <div class="row">
-      <div class="col-12">
-        <mat-form-field appearance="fill" class="container-fluid">
-          <input title="Filter" matInput placeholder="Filter.." autocomplete="off" (keyup)="filterData($event)">
-        </mat-form-field>
-
-        <table mat-table [dataSource]="dataSource" multiTemplateDataRows matSort class="mat-elevation-z8">
-          <ng-container matColumnDef="id">
-            <th mat-header-cell mat-sort-header *matHeaderCellDef> ID </th>
-            <td mat-cell *matCellDef="let element"> {{element.id}} </td>
-          </ng-container>
-          <ng-container matColumnDef="client">
-            <th mat-header-cell mat-sort-header *matHeaderCellDef> Client ID </th>
-            <td mat-cell *matCellDef="let element"> {{element.client}}</td>
-          </ng-container>
-          <ng-container matColumnDef="ordertime">
-            <th mat-header-cell mat-sort-header *matHeaderCellDef> Ordered At </th>
-            <td mat-cell *matCellDef="let element"> {{element.ordertime}}</td>
-          </ng-container>
-          <ng-container matColumnDef="status">
-            <th mat-header-cell mat-sort-header *matHeaderCellDef> Status </th>
-            <td mat-cell *matCellDef="let element">
-              <div *ngIf="element.status == 'complete'"><img src="../../../assets/img/complete.svg" alt="Complete"></div>
-              <div *ngIf="element.status == 'processing'"><img src="../../../assets/img/processing.svg" alt="Complete"></div>
-              <div *ngIf="element.status == 'cancelled'"><img src="../../../assets/img/cancelled.svg" alt="Complete"></div>
-            </td>
-          </ng-container>
-          <ng-container matColumnDef="total">
-            <th mat-header-cell mat-sort-header *matHeaderCellDef> Order Total/TTC </th>
-            <td mat-cell *matCellDef="let element"> {{element.total}}</td>
-          </ng-container>
-          <ng-container matColumnDef="actions">
-            <th mat-header-cell *matHeaderCellDef> Actions </th>
-            <td mat-cell *matCellDef="let element">
-              <button title="Edit" type="button" class="btn btn-success" (click)="this.edit(element.id)"><i
-                  class="fas fa-edit"></i></button>
-              <button title="Delete" type="button" class="btn btn-danger" (click)="this.delete(element.id)"><i
-                  class="far fa-trash-alt"></i></button>
-            </td>
-          </ng-container>
-
-          <!-- Expanded Content Column - The detail row is made up of this one column that spans across all columns -->
-          <ng-container matColumnDef="expandedDetail">
-            <td mat-cell *matCellDef="let element" [attr.colspan]="displayedColumns.length">
-              <div class="example-element-detail"
-                [@detailExpand]="element == expandedElement ? 'expanded' : 'collapsed'">
-                <div class="example-element-description">
-                  <span class="example-element-description-attribution"> <i class="fa-solid fa-book"></i> - Order
-                    Details :</span><br>
-                  {{element.products}}
-                </div>
-              </div>
-            </td>
-          </ng-container>
-
-          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-          <tr mat-row *matRowDef="let element; columns: displayedColumns;" class="example-element-row"
-            [class.example-expanded-row]="expandedElement === element"
-            (click)="expandedElement = expandedElement === element ? null : element">
-          </tr>
-          <tr mat-row *matRowDef="let row; columns: ['expandedDetail']" class="example-detail-row"></tr>
-        </table>
-
-        <mat-paginator #paginator [pageSize]="10" [pageSizeOptions]="[5, 10, 25, 100]">
-        </mat-paginator>
-
-
-      </div>
-    </div>
     <br>
-    <button title="Add Order" type="button" class="btn btn-success btn-circle btn-xl" (click)="this.openCreate()"><i
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <mat-form-field appearance="fill" class="container-fluid">
+                    <input title="Filter" matInput placeholder="Filter.." autocomplete="off" (keyup)="filterData($event)">
+                </mat-form-field>
+
+                <table mat-table [dataSource]="dataSource" multiTemplateDataRows matSort class="mat-elevation-z8">
+                    <ng-container matColumnDef="id">
+                        <th mat-header-cell mat-sort-header *matHeaderCellDef> ID </th>
+                        <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+                    </ng-container>
+                    <ng-container matColumnDef="client">
+                        <th mat-header-cell mat-sort-header *matHeaderCellDef> Client ID </th>
+                        <td mat-cell *matCellDef="let element"> {{element.client}}</td>
+                    </ng-container>
+                    <ng-container matColumnDef="ordertime">
+                        <th mat-header-cell mat-sort-header *matHeaderCellDef> Ordered At </th>
+                        <td mat-cell *matCellDef="let element"> {{element.ordertime}}</td>
+                    </ng-container>
+                    <ng-container matColumnDef="status">
+                        <th mat-header-cell mat-sort-header *matHeaderCellDef> Status </th>
+                        <td mat-cell *matCellDef="let element">
+                            <div *ngIf="element.status == 'complete'"><img src="../../../assets/img/complete.svg" alt="Complete"></div>
+                            <div *ngIf="element.status == 'processing'"><img src="../../../assets/img/processing.svg" alt="Complete"></div>
+                            <div *ngIf="element.status == 'cancelled'"><img src="../../../assets/img/cancelled.svg" alt="Complete"></div>
+                        </td>
+                    </ng-container>
+                    <ng-container matColumnDef="total">
+                        <th mat-header-cell mat-sort-header *matHeaderCellDef> Order Total/TTC </th>
+                        <td mat-cell *matCellDef="let element"> {{element.total}}</td>
+                    </ng-container>
+                    <ng-container matColumnDef="actions">
+                        <th mat-header-cell *matHeaderCellDef> Actions </th>
+                        <td mat-cell *matCellDef="let element">
+                            <button title="Edit" type="button" class="btn btn-success" (click)="this.edit(element.id)"><i
+                  class="fas fa-edit"></i></button>
+                            <button title="Delete" type="button" class="btn btn-danger" (click)="this.delete(element.id)"><i
+                  class="far fa-trash-alt"></i></button>
+                        </td>
+                    </ng-container>
+
+                    <!-- Expanded Content Column - The detail row is made up of this one column that spans across all columns -->
+                    <ng-container matColumnDef="expandedDetail">
+                        <td mat-cell *matCellDef="let element" [attr.colspan]="displayedColumns.length">
+                            <div class="example-element-detail" [@detailExpand]="element == expandedElement ? 'expanded' : 'collapsed'">
+                                <div class="example-element-description">
+                                    <span class="example-element-description-attribution"> <i class="fa-solid fa-book"></i> - Order
+                    Details :</span><br> {{element.products}}
+                                </div>
+                            </div>
+                        </td>
+                    </ng-container>
+
+                    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                    <tr mat-row *matRowDef="let element; columns: displayedColumns;" class="example-element-row" [class.example-expanded-row]="expandedElement === element" (click)="expandedElement = expandedElement === element ? null : element">
+                    </tr>
+                    <tr mat-row *matRowDef="let row; columns: ['expandedDetail']" class="example-detail-row"></tr>
+                </table>
+
+                <mat-paginator #paginator [pageSize]="10" [pageSizeOptions]="[5, 10, 25, 100]">
+                </mat-paginator>
+
+
+            </div>
+        </div>
+        <br>
+        <button title="Add Order" type="button" class="btn btn-success container-fluid" (click)="this.openCreate()"><i
         class="fa-solid fa-circle-plus"></i></button>
-  </div>
+    </div>
 </main>

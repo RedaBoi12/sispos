@@ -1,7 +1,10 @@
+import { Coupon } from './../../../interfaces/coupon';
 import { Component, Inject, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Router } from '@angular/router';
+import { Client } from 'src/app/interfaces/client';
+import { Order } from 'src/app/interfaces/order';
 import { ApiService } from 'src/app/services/api.service';
 import Swal from 'sweetalert2';
 
@@ -14,11 +17,11 @@ export class OrderComponent implements OnInit {
 
 
   addForm!: FormGroup;
-  order:any;
+  order!:Array<Order>;
   id: number;
-  clients:any;
-  coupons:any;
-  status:any = ['complete', 'processing', 'cancelled'];
+  clients?:Array<Client>;
+  coupons?:Array<Coupon>;
+  status?:Array<any> = ['complete', 'processing', 'cancelled'];
 
   constructor(private API: ApiService, public router: Router, @Inject(MAT_DIALOG_DATA) public data:any) {
     this.id = data.id;
@@ -46,10 +49,10 @@ export class OrderComponent implements OnInit {
       this.addForm.get('total')?.setValue(this.order[0].total || 0);
     })
 
-    this.API.getClientIDs().subscribe((response)=>{
+    this.API.getClients().subscribe((response)=>{
       this.clients = response;
     })
-    this.API.getCouponIDs().subscribe((response)=>{
+    this.API.getCoupons().subscribe((response)=>{
       this.coupons = response;
     })
   }

@@ -4,48 +4,50 @@
 
 
         <mat-divider></mat-divider>
-        <button mat-button class="btn btn-outline-hidden" routerLink="./">
+        <button mat-button class="btn btn-outline-hidden container-fluid" routerLink="./">
             <i class="fa-solid fa-display"></i>
             <span>Dashboard</span>
         </button>
         <br><br>
-        <button mat-button class="btn btn-outline-hidden" routerLink="./clients">
+        <button mat-button class="btn btn-outline-hidden container-fluid" routerLink="./clients">
             <i class="fa-solid fa-users"></i>
             <span>Clients</span>
         </button>
         <br>
-        <button mat-button class="btn btn-outline-hidden" routerLink="./orders">
+        <button mat-button class="btn btn-outline-hidden container-fluid" routerLink="./orders">
             <i class="fa-solid fa-truck"></i>
             <span>Orders</span>
         </button>
         <br>
-        <button mat-button class="btn btn-outline-hidden" routerLink="./categories">
+        <button mat-button class="btn btn-outline-hidden container-fluid" routerLink="./categories">
             <i class="fa-solid fa-box"></i>
             <span>Categories</span>
         </button>
         <br>
-        <button mat-button class="btn btn-outline-hidden" routerLink="./products">
+        <button mat-button class="btn btn-outline-hidden container-fluid" routerLink="./products">
             <i class="fa-solid fa-apple-whole"></i>
             <span>Products</span>
         </button>
         <br>
-        <button mat-button class="btn btn-outline-hidden" routerLink="./coupons">
+        <button mat-button class="btn btn-outline-hidden container-fluid" routerLink="./coupons">
             <i class="fa-solid fa-tags"></i>
             <span>Coupons</span>
         </button>
         <mat-divider></mat-divider>
-        <button mat-button class="btn btn-outline-hidden" routerLink="./tasks">
-            <i class="fa-solid fa-list-check"></i>
-            <span>Task Manager</span>
-        </button>
-        <br>
-        <button mat-button class="btn btn-outline-hidden" (click)="this.aservice.SignOut()">
-            <i class="fa-solid fa-person-walking-arrow-loop-left"></i>
-            <span>Sign Out</span>
-        </button>
-        <hr>
-        <hr>
-        <p class="text-dark"><i class="fa-solid fa-angles-right"></i> Check out the API <a rel="noopener" href="https://sisapi-dashboard.herokuapp.com" target="_blank">here</a></p>
+        <div class="side-footer">
+            <button mat-button class="btn btn-outline-hidden container-fluid" routerLink="./tasks">
+                <i class="fa-solid fa-list-check"></i>
+                <span>Task Manager</span>
+            </button>
+            <br>
+            <button mat-button class="btn btn-outline-hidden container-fluid" (click)="this.aservice.SignOut()">
+                <i class="fa-solid fa-person-walking-arrow-loop-left"></i>
+                <span>Sign Out</span>
+            </button>
+            <hr>
+            <hr>
+            <p class="text-dark"><i class="fa-solid fa-angles-right"></i> Check out the API <a rel="noopener" href="https://sisapi-dashboard.herokuapp.com" target="_blank">here</a></p>
+        </div>
     </mat-sidenav>
 
     <mat-sidenav-content>

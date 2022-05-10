@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
+import { Category } from 'src/app/interfaces/category';
 import { ApiService } from 'src/app/services/api.service';
 import Swal from 'sweetalert2';
 
@@ -13,7 +14,7 @@ export class AddcategoryComponent implements OnInit {
 
   addForm!: FormGroup;
   isChild:boolean = false;
-  motherIDs:any;
+  motherIDs?:Array<Category>;
 
   constructor(private API: ApiService, public router: Router) {
   }
@@ -24,10 +25,10 @@ export class AddcategoryComponent implements OnInit {
       'name': new FormControl(),
       'description': new FormControl(),
       'shell': new FormControl(),
-      'ismother': new FormControl(),
-      'mother': new FormControl()
+      'isChild': new FormControl(true),
+      'motherID': new FormControl()
     })
-    this.API.getCategoryIDs().subscribe((res)=>this.motherIDs = res);
+    this.API.getCategories().subscribe((res)=>this.motherIDs = res);
 
   }
 
@@ -42,7 +43,7 @@ export class AddcategoryComponent implements OnInit {
       'description': `${this.addForm.get('description')?.value}`,
       'shell': `${this.addForm.get('shell')?.value}`,
       'isChild': `${this.isChild}`,
-      'motherID': `${this.addForm.get('mother')?.value}`
+      'motherID': `${this.addForm.get('motherID')?.value}`
     }
 
     //LOAD DATA VARIABLE INTO POST REQUEST

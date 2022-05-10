@@ -1,42 +1,41 @@
 <h2>VIEW / EDIT - ID: {{this.id}}</h2>
 <hr>
 <div class="container-fluid">
-  <form [formGroup]="addForm">
-    <fieldset>
-    <div class="mb-3">
-      <br>
-      <label for="client" class="form-label">Client ID</label>
-      <select formControlName="client" title="client" required class="form-control" id="client">
-        <option disabled value="-1">-- Choose Client ID --</option>
-        <option *ngFor="let client of clients" value="{{client.id}}">{{client.id}}</option>
-    </select>
-      <br>
-      <label for="products" class="form-label">Products <strong>(json format)</strong></label>
-      <textarea formControlName="products" title="Products" required type="text" class="form-control" id="products" placeholder="Enter Products Json" rows="5">
-      </textarea>
-      <br>
-      <label for="ordertime" class="form-label">Order Time</label>
-      <input formControlName="ordertime" title="ordertime" required type="text" class="form-control" id="ordertime">
-      <br>
-      <label for="total" class="form-label">Total/TTC</label>
-      <input formControlName="total" title="total" required type="number" class="form-control" id="total">
-      <br>
-      <label for="couponused" class="form-label">Coupon ID Used</label>
-      <select formControlName="couponused" title="couponused" required class="form-control" id="couponused">
-        <option disabled value="-1">-- Choose Coupon ID --</option>
-        <option value="0">1</option>
-        <option *ngFor="let coupon of coupons" value="{{coupon.id}}">{{coupon.id}}</option>
-    </select>
-    <br>
-    <label for="status" class="form-label">Status</label>
-    <select formControlName="status" title="status" required class="form-control" id="status">
-      <option disabled value="-1">-- Choose Status --</option>
-      <option *ngFor="let status of status" value="{{status}}">{{status}}</option>
-  </select>
-      <br>
-    </div>
-    <button type="button" class="btn btn-success" (click)="update()">Update</button>
-    <br>
-  </fieldset>
-  </form>
+    <form [formGroup]="addForm">
+        <fieldset>
+            <div class="mb-3">
+                <br>
+                <label for="client" class="form-label">Client ID</label>
+                <select formControlName="client" title="client" required class="form-select" id="client">
+                    <option disabled value="-1">-- Choose Client ID --</option>
+                    <option *ngFor="let client of clients" value="{{client.id}}">({{client.id}}) {{client.lastname}} {{client.firstname}}</option>
+                </select>
+                <br>
+                <label for="products" class="form-label">Products <strong>(json format)</strong></label>
+                <textarea formControlName="products" title="Products" required type="text" class="form-control" id="products" placeholder="Enter Products Json" rows="5">
+                </textarea>
+                <br>
+                <label for="ordertime" class="form-label">Order Time</label>
+                <input formControlName="ordertime" title="ordertime" required type="text" class="form-control" id="ordertime">
+                <br>
+                <label for="total" class="form-label">Total/TTC</label>
+                <input formControlName="total" title="total" required type="number" class="form-control" id="total">
+                <br>
+                <label for="couponused" class="form-label">Coupon ID Used</label>
+                <select formControlName="couponused" title="couponused" required class="form-select" id="couponused">
+                    <option disabled value="-1">-- Choose Coupon ID --</option>
+                    <option *ngFor="let coupon of coupons" value="{{coupon.id}}">({{coupon.id}}) {{coupon.name}} > Expires in: {{coupon.expiration}}</option>
+                </select>
+                <br>
+                <label for="status" class="form-label">Status</label>
+                <select formControlName="status" title="status" required class="form-select" id="status">
+                    <option disabled value="-1">-- Choose Status --</option>
+                    <option *ngFor="let status of status" value="{{status}}">{{status}}</option>
+                </select>
+                <br>
+            </div>
+            <button type="button" class="btn btn-success container-fluid" (click)="update()">Update</button>
+            <br>
+        </fieldset>
+    </form>
 </div>

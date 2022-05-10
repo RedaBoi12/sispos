@@ -1,92 +1,83 @@
 <main>
-  <br>
-  <div class="container">
-    <div class="row">
-      <div class="col-12">
-        <mat-form-field appearance="fill" class="container-fluid">
-          <input title="Filter" matInput placeholder="Filter.." autocomplete="off" (keyup)="filterData($event)">
-        </mat-form-field>
-
-        <table mat-table [dataSource]="dataSource" multiTemplateDataRows matSort
-          class="mat-elevation-z8 container-fluid">
-          <ng-container matColumnDef="id">
-            <th mat-header-cell mat-sort-header *matHeaderCellDef> ID </th>
-            <td mat-cell *matCellDef="let element"> {{element.id}} </td>
-          </ng-container>
-          <ng-container matColumnDef="fullname">
-            <th mat-header-cell mat-sort-header *matHeaderCellDef> Full Name </th>
-            <td mat-cell *matCellDef="let element"> {{element.firstname}} {{element.lastname}}</td>
-          </ng-container>
-          <ng-container matColumnDef="email">
-            <th mat-header-cell mat-sort-header *matHeaderCellDef> Email </th>
-            <td mat-cell *matCellDef="let element"> {{element.email}}</td>
-          </ng-container>
-          <ng-container matColumnDef="plan">
-            <th mat-header-cell mat-sort-header *matHeaderCellDef> Plan </th>
-            <td mat-cell *matCellDef="let element"> {{element.plan}}</td>
-          </ng-container>
-          <ng-container matColumnDef="isActive">
-            <th mat-header-cell mat-sort-header *matHeaderCellDef> is Active? </th>
-            <td mat-cell *matCellDef="let element"> {{element.isActive}}</td>
-          </ng-container>
-          <ng-container matColumnDef="actions">
-            <th mat-header-cell *matHeaderCellDef> Actions </th>
-            <td mat-cell *matCellDef="let element">
-              <button title="Edit" type="button" class="btn btn-success" (click)="this.edit(element.id)"><i
-                  class="fas fa-edit"></i></button>
-              <button title="Delete" type="button" class="btn btn-danger" (click)="this.delete(element.id)"><i
-                  class="far fa-trash-alt"></i></button>
-            </td>
-          </ng-container>
-
-          <!-- Expanded Content Column - The detail row is made up of this one column that spans across all columns -->
-          <ng-container matColumnDef="expandedDetail">
-            <td mat-cell *matCellDef="let element" [attr.colspan]="displayedColumns.length">
-              <div class="example-element-detail"
-                [@detailExpand]="element == expandedElement ? 'expanded' : 'collapsed'">
-                <div class="example-element-diagram">
-                  <div class="example-element-avatar"><img src="{{element.avatar}}" height="100px" width="100px" alt="">
-                  </div>
-                </div>
-                <div class="example-element-description">
-                  <span class="example-element-description-attribution"> <i class="fa-solid fa-phone"></i> - Mobile
-                    :</span>
-                  {{element.mobile}}
-                  <br>
-                  <span class="example-element-description-attribution"> <i class="fa-solid fa-map-location-dot"></i> -
-                    Adresse :</span>
-                  {{element.locationstreet}}, {{element.locationcity}}, {{element.locationcountry}}
-                  <br>
-                  <span class="example-element-description-attribution"> <i class="fa-solid fa-map-location-dot"></i> -
-                    Joined In :</span>
-                  {{element.joinedin}}
-                  <br><br><br>
-                  <span class="example-element-description-attribution"> <i class="fa-solid fa-credit-card"></i> -
-                    Payment Info :</span><br>
-                  CC Number: {{element.ccnumber}} <br> CCV: {{element.ccv}} <br> Expiry: {{element.expiry}} <br> Bank:
-                  {{element.type}}
-                  <br>
-                </div>
-              </div>
-            </td>
-          </ng-container>
-
-          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-          <tr mat-row *matRowDef="let element; columns: displayedColumns;" class="example-element-row"
-            [class.example-expanded-row]="expandedElement === element"
-            (click)="expandedElement = expandedElement === element ? null : element">
-          </tr>
-          <tr mat-row *matRowDef="let row; columns: ['expandedDetail']" class="example-detail-row"></tr>
-        </table>
-
-        <mat-paginator #paginator [pageSize]="10" [pageSizeOptions]="[5, 10, 25, 100]">
-        </mat-paginator>
-
-
-      </div>
-    </div>
     <br>
-    <button title="Add Client" type="button" class="btn btn-success btn-circle btn-xl" (click)="this.openCreate()"><i
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <mat-form-field appearance="fill" class="container-fluid">
+                    <input title="Filter" matInput placeholder="Filter.." autocomplete="off" (keyup)="filterData($event)">
+                </mat-form-field>
+
+                <table mat-table [dataSource]="dataSource" multiTemplateDataRows matSort class="mat-elevation-z8 container-fluid">
+                    <ng-container matColumnDef="id">
+                        <th mat-header-cell mat-sort-header *matHeaderCellDef> ID </th>
+                        <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+                    </ng-container>
+                    <ng-container matColumnDef="fullname">
+                        <th mat-header-cell mat-sort-header *matHeaderCellDef> Full Name </th>
+                        <td mat-cell *matCellDef="let element"> {{element.firstname}} {{element.lastname}}</td>
+                    </ng-container>
+                    <ng-container matColumnDef="email">
+                        <th mat-header-cell mat-sort-header *matHeaderCellDef> Email </th>
+                        <td mat-cell *matCellDef="let element"> {{element.email}}</td>
+                    </ng-container>
+                    <ng-container matColumnDef="plan">
+                        <th mat-header-cell mat-sort-header *matHeaderCellDef> Plan </th>
+                        <td mat-cell *matCellDef="let element"> {{element.plan}}</td>
+                    </ng-container>
+                    <ng-container matColumnDef="isActive">
+                        <th mat-header-cell mat-sort-header *matHeaderCellDef> is Active? </th>
+                        <td mat-cell *matCellDef="let element"> {{element.isActive}}</td>
+                    </ng-container>
+                    <ng-container matColumnDef="actions">
+                        <th mat-header-cell *matHeaderCellDef> Actions </th>
+                        <td mat-cell *matCellDef="let element">
+                            <button title="Edit" type="button" class="btn btn-success" (click)="this.edit(element.id)"><i
+                  class="fas fa-edit"></i></button>
+                            <button title="Delete" type="button" class="btn btn-danger" (click)="this.delete(element.id)"><i
+                  class="far fa-trash-alt"></i></button>
+                        </td>
+                    </ng-container>
+
+                    <!-- Expanded Content Column - The detail row is made up of this one column that spans across all columns -->
+                    <ng-container matColumnDef="expandedDetail">
+                        <td mat-cell *matCellDef="let element" [attr.colspan]="displayedColumns.length">
+                            <div class="example-element-detail" [@detailExpand]="element == expandedElement ? 'expanded' : 'collapsed'">
+                                <div class="example-element-diagram">
+                                    <div class="example-element-avatar"><img src="{{element.avatar}}" height="100px" width="100px" alt="">
+                                    </div>
+                                </div>
+                                <div class="example-element-description">
+                                    <span class="example-element-description-attribution"> <i class="fa-solid fa-phone"></i> - Mobile
+                    :</span> {{element.mobile}}
+                                    <br>
+                                    <span class="example-element-description-attribution"> <i class="fa-solid fa-map-location-dot"></i> -
+                    Adresse :</span> {{element.locationstreet}}, {{element.locationcity}}, {{element.locationcountry}}
+                                    <br>
+                                    <span class="example-element-description-attribution"> <i class="fa-solid fa-map-location-dot"></i> -
+                    Joined In :</span> {{element.joinedin}}
+                                    <br><br><br>
+                                    <span class="example-element-description-attribution"> <i class="fa-solid fa-credit-card"></i> -
+                    Payment Info :</span><br> CC Number: {{element.ccnumber}} <br> CCV: {{element.ccv}} <br> Expiry: {{element.expiry}} <br> Bank: {{element.type}}
+                                    <br>
+                                </div>
+                            </div>
+                        </td>
+                    </ng-container>
+
+                    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                    <tr mat-row *matRowDef="let element; columns: displayedColumns;" class="example-element-row" [class.example-expanded-row]="expandedElement === element" (click)="expandedElement = expandedElement === element ? null : element">
+                    </tr>
+                    <tr mat-row *matRowDef="let row; columns: ['expandedDetail']" class="example-detail-row"></tr>
+                </table>
+
+                <mat-paginator #paginator [pageSize]="10" [pageSizeOptions]="[5, 10, 25, 100]">
+                </mat-paginator>
+
+
+            </div>
+        </div>
+        <br>
+        <button title="Add Client" type="button" class="btn btn-success container-fluid" (click)="this.openCreate()"><i
         class="fa-solid fa-circle-plus"></i></button>
-  </div>
+    </div>
 </main>

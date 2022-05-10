@@ -52,3 +52,9 @@ mat-divider {
     background: linear-gradient(to top, #26a0da, #314755);
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
+
+.side-footer {
+    position: absolute;
+    width: 90%;
+    bottom: 0;
+}

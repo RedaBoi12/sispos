@@ -30,7 +30,7 @@
                 <select class="form-select" formControlName="categoryID" title="Category" id="categoryID">
 
         <option disabled>Choose Category ID</option>
-          <option *ngFor="let categoryid of categoryids" value="{{categoryid.id}}">{{categoryid.id}}</option>
+          <option *ngFor="let categoryid of categoryids" value="{{categoryid.id}}">({{categoryid.id}}) {{categoryid.shell}}</option>
       </select>
                 <br>
 
@@ -38,7 +38,7 @@
 
                 <label for="isActivated" class="form-check-label"> is Activated?</label>
             </div>
-            <button type="button" (click)="update()" class="btn btn-success">Update</button>
+            <button type="button" (click)="update()" class="btn btn-success container-fluid">Update</button>
             <br>
         </fieldset>
     </form>

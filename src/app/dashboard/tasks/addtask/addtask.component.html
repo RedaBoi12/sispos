@@ -1,36 +1,23 @@
 <h2>Add a Task</h2>
 <div class="container-fluid">
-  <form [formGroup]="addForm">
-    <fieldset>
-    <div class="mb-3">
-      <br>
-      <label for="name" class="form-label">Name</label>
+    <form [formGroup]="addForm">
+        <fieldset>
+            <div class="mb-3">
+                <br>
+                <label for="name" class="form-label">Name</label>
 
-      <input
-       formControlName="name" 
-       title="Name" 
-       required 
-       type="text" 
-       class="form-control" 
-       id="name">
+                <input formControlName="name" title="Name" required type="text" class="form-control" id="name">
 
-      <br>
-      <label for="name" class="form-label">Description</label>
-      
-      <input
-       maxlength="100" 
-       formControlName="description" 
-       title="Description" 
-       required 
-       type="text" 
-       class="form-control" 
-       id="description">
-       
-      <div id="descriptionHelp" class="form-text">100 Character Length Maximum.</div>
+                <br>
+                <label for="name" class="form-label">Description</label>
 
-    </div>
-    <button type="button" (click)="create()" class="btn btn-success">Add</button>
-    <br>
-  </fieldset>
-  </form>
+                <input maxlength="100" formControlName="description" title="Description" required type="text" class="form-control" id="description">
+
+                <div id="descriptionHelp" class="form-text">100 Character Length Maximum.</div>
+
+            </div>
+            <button type="button" (click)="create()" class="btn btn-success container-fluid">Add</button>
+            <br>
+        </fieldset>
+    </form>
 </div>

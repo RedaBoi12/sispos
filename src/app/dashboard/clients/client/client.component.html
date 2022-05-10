@@ -1,196 +1,107 @@
 <h2>Client ID: {{this.id}} (View/Edit)</h2>
 <hr>
 <div class="container-fluid">
-  <form [formGroup]="addForm">
-    <fieldset>
-    <div class="mb-3">
-      <br>
-      <label for="name" class="form-label">Full Name</label>
-      <div class="row">
-        <div class="col">
+    <form [formGroup]="addForm">
+        <fieldset>
+            <div class="mb-3">
+                <br>
+                <label for="name" class="form-label">Full Name</label>
+                <div class="row">
+                    <div class="col">
 
-          <input 
-            formControlName="firstname" 
-            title="FirstName" 
-            required 
-            type="text" 
-            class="form-control" 
-            id="firstname" 
-            placeholder="First Name">
+                        <input formControlName="firstname" title="FirstName" required type="text" class="form-control" id="firstname" placeholder="First Name">
 
-        </div>
-        <div class="col">
+                    </div>
+                    <div class="col">
 
-          <input 
-            formControlName="lastname" 
-            title="LastName" 
-            required 
-            type="text" 
-            class="form-control" 
-            id="lastname" 
-            placeholder="Last Name">
+                        <input formControlName="lastname" title="LastName" required type="text" class="form-control" id="lastname" placeholder="Last Name">
 
-        </div>
-      </div>
-      <br>
-      <label for="name" class="form-label">Email & Phone Number</label>
-      <div class="row">
-        <div class="col">
+                    </div>
+                </div>
+                <br>
+                <label for="name" class="form-label">Email & Phone Number</label>
+                <div class="row">
+                    <div class="col">
 
-          <input 
-            formControlName="email" 
-            title="Email" 
-            required 
-            type="text" 
-            class="form-control" 
-            id="email" 
-            placeholder="email@email.com">
+                        <input formControlName="email" title="Email" required type="text" class="form-control" id="email" placeholder="email@email.com">
 
-        </div>
-        <div class="col">
+                    </div>
+                    <div class="col">
 
-          <input 
-            formControlName="mobile" 
-            title="Mobile" 
-            required 
-            type="text" 
-            class="form-control" 
-            id="mobile" 
-            placeholder="+212..">
+                        <input formControlName="mobile" title="Mobile" required type="text" class="form-control" id="mobile" placeholder="+212..">
 
-        </div>
-      </div>
-      <br>
-      <label for="avatar" class="form-label">Avatar</label>
+                    </div>
+                </div>
+                <br>
+                <label for="avatar" class="form-label">Avatar</label>
 
-      <input 
-        formControlName="avatar" 
-        title="Avatar" 
-        type="text" 
-        class="form-control" 
-        id="avatar" 
-        placeholder="Avatar Image Link">
+                <input formControlName="avatar" title="Avatar" type="text" class="form-control" id="avatar" placeholder="Avatar Image Link">
 
-      <br>
-      <label for="plan" class="form-label">Plan</label>
+                <br>
+                <label for="plan" class="form-label">Plan</label>
 
-      <select 
-        formControlName="plan" 
-        title="Plan" 
-        required 
-        class="form-select" 
-        id="plans">
+                <select formControlName="plan" title="Plan" required class="form-select" id="plans">
 
           <option disabled value="-1">-- Choose Plan --</option>
           <option *ngFor="let plan of plans" value="{{plan}}">{{plan}}</option>
       </select>
-      <br>
-      <label for="adresse" class="form-label">Adresse</label>
-      <div class="row">
-        <div class="col">
+                <br>
+                <label for="adresse" class="form-label">Adresse</label>
+                <div class="row">
+                    <div class="col">
 
-          <input 
-            formControlName="locationstreet" 
-            title="Street" 
-            required 
-            type="text" 
-            class="form-control" 
-            id="street" 
-            placeholder="Street Name">
+                        <input formControlName="locationstreet" title="Street" required type="text" class="form-control" id="street" placeholder="Street Name">
 
-        </div>
-        <div class="col">
+                    </div>
+                    <div class="col">
 
-          <input 
-          formControlName="locationcity" 
-          title="City" 
-          required 
-          type="text" 
-          class="form-control" 
-          id="city" 
-          placeholder="City Name">
+                        <input formControlName="locationcity" title="City" required type="text" class="form-control" id="city" placeholder="City Name">
 
-        </div>
-        <div class="col">
+                    </div>
+                    <div class="col">
 
-          <select 
-            title="Country" 
-            formControlName="locationcountry" 
-            class="form-select" 
-            id="locationcountry">
+                        <select title="Country" formControlName="locationcountry" class="form-select" id="locationcountry">
 
             <option value="" disabled selected>Select Country</option>
             <option *ngFor="let country of countries" [value]="country.name">{{country.name}}</option>
           </select>
-        </div>
-      </div>
-      <br>
-      <label for="payment" class="form-label">Payment Information</label>
-      
-      <input 
-        formControlName="ccnumber" 
-        title="CCNumber" 
-        required type="text" 
-        class="form-control" 
-        id="ccnumber" 
-        placeholder="Credit Card Number">
+                    </div>
+                </div>
+                <br>
+                <label for="payment" class="form-label">Payment Information</label>
 
-      <br>
-      <div class="row">
-        <div class="col">
+                <input formControlName="ccnumber" title="CCNumber" required type="text" class="form-control" id="ccnumber" placeholder="Credit Card Number">
 
-          <select
-           formControlName="banktype" 
-           title="Bank" 
-           required 
-           class="form-select" 
-           id="banks">
+                <br>
+                <div class="row">
+                    <div class="col">
+
+                        <select formControlName="banktype" title="Bank" required class="form-select" id="banks">
 
             <option disabled value="-1">-- Choose Bank --</option>
             <option *ngFor="let bank of banks" value="{{bank}}">{{bank}}</option>
           </select>
-        </div>
-        <div class="col">
+                    </div>
+                    <div class="col">
 
-          <input
-           maxlength="3" 
-           formControlName="ccv" 
-           title="CCV" 
-           required 
-           type="number" 
-           class="form-control" 
-           id="ccv" 
-           placeholder="CCV">
-           
-        </div>
-        <div class="col">
+                        <input maxlength="3" formControlName="ccv" title="CCV" required type="number" class="form-control" id="ccv" placeholder="CCV">
 
-          <input
-           formControlName="expiry" 
-           title="Expiry" 
-           required 
-           type="text" 
-           class="form-control" 
-           id="expiry" 
-           placeholder="Expiry Date">
+                    </div>
+                    <div class="col">
 
-        </div>
-      </div>
-      <br>
-      
-      <input
-       type="checkbox" 
-       formControlName="isActive" 
-       title="Category" 
-       required 
-       class="form-check-input" 
-       id="isActive">
+                        <input formControlName="expiry" title="Expiry" required type="text" class="form-control" id="expiry" placeholder="Expiry Date">
 
-      <label for="isActive" class="form-check-label"> is Active?</label>
-    </div>
-    <button type="button" class="btn btn-success" (click)="update()">Update</button>
-    <br>
-  </fieldset>
-  </form>
+                    </div>
+                </div>
+                <br>
+
+                <input type="checkbox" formControlName="isActive" title="Category" required class="form-check-input" id="isActive">
+
+                <label for="isActive" class="form-check-label"> is Active?</label>
+            </div>
+            <button type="button" class="btn btn-success container-fluid" (click)="update()">Update</button>
+            <br>
+        </fieldset>
+    </form>
 </div>
 <hr>

@@ -1,87 +1,47 @@
 <h2>Add a Product</h2>
 <hr>
 <div class="container-fluid">
-  <form [formGroup]="addForm">
-    <fieldset>
-    <div class="mb-3">
-      <br>
-      <label for="name" class="form-label">Name</label>
+    <form [formGroup]="addForm">
+        <fieldset>
+            <div class="mb-3">
+                <br>
+                <label for="name" class="form-label">Name</label>
 
-      <input
-       formControlName="name" 
-       title="Name" 
-       required 
-       type="text" 
-       class="form-control" 
-       id="name" 
-       placeholder="Product Name">
+                <input formControlName="name" title="Name" required type="text" class="form-control" id="name" placeholder="Product Name">
 
-      <br>
-      <label for="name" class="form-label">Description</label>
+                <br>
+                <label for="description" class="form-label">Description</label>
 
-      <input
-       maxlength="100" 
-       formControlName="description" 
-       title="Description" 
-       required 
-       type="text" 
-       class="form-control" 
-       id="description" 
-       placeholder="Product Description">
+                <input maxlength="100" formControlName="description" title="Description" required type="text" class="form-control" id="description" placeholder="Product Description">
 
-      <div id="descriptionHelp" class="form-text">100 Character Length Maximum.</div>
-      <br>
-      <label for="price" class="form-label">Price</label>
+                <div class="form-text">100 Character Length Maximum.</div>
+                <br>
+                <label for="price" class="form-label">Price</label>
 
-      <input
-       formControlName="price" 
-       title="Price" 
-       required 
-       type="number" 
-       class="form-control" 
-       id="price" 
-       placeholder="Product Price">
+                <input formControlName="price" title="Price" required type="number" class="form-control" id="price" placeholder="Product Price">
 
-      <br>
-      <label for="stock" class="form-label">Stock</label>
+                <br>
+                <label for="stock" class="form-label">Stock</label>
 
-      <input
-       formControlName="stock" 
-       title="Stock" 
-       required 
-       type="number" 
-       class="form-control" 
-       id="stock" 
-       placeholder="Product Stock">
+                <input formControlName="stock" title="Stock" required type="number" class="form-control" id="stock" placeholder="Product Stock">
 
-      <br>
-      <label for="categoryID" class="form-label">Category ID</label>
-      
-      <select
-       class="form-select" 
-       formControlName="categoryID" 
-       title="Category" 
-       name="categoryid" 
-       id="categoryID">
+                <br>
+                <label for="categoryID" class="form-label">Category ID</label>
+
+                <select class="form-select" formControlName="categoryID" title="Category" name="categoryid" id="categoryID">
 
             <option disabled>Choose Category ID</option>
-          <option *ngFor="let categoryid of categoryids" value="{{categoryid.id}}">{{categoryid.id}}</option>
+          <option *ngFor="let categoryid of categoryids" value="{{categoryid.id}}">({{categoryid.id}}) {{categoryid.shell}}</option>
       </select>
-      <br>
+                <br>
 
-      <input
-       type="checkbox" 
-       formControlName="isActivated" 
-       title="Category" 
-       required 
-       class="form-check-input" 
-       id="isActivated">
-       
-      <label for="isActivated" class="form-check-label"> is Activated?</label>
-    </div>
-    <button type="button" (click)="create()" class="btn btn-success">Add</button>
-    <br>
-  </fieldset>
-  </form>
+                <input type="checkbox" formControlName="isActivated" title="Category" required class="form-check-input" id="isActivated">
+
+                <label for="isActivated" class="form-check-label"> is Activated?</label>
+            </div>
+            <button type="button" (click)="create()" class="btn btn-success container-fluid">Add</button>
+            <br>
+        </fieldset>
+    </form>
 </div>
 <hr>

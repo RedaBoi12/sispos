@@ -1,3 +1,5 @@
+import { Coupon } from './../../../interfaces/coupon';
+import { Client } from './../../../interfaces/client';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -13,9 +15,9 @@ export class AddorderComponent implements OnInit {
 
 
   addForm!: FormGroup;
-  clients: any;
-  coupons: any;
-  status: any = ['complete', 'processing', 'cancelled'];
+  clients?:Array<Client>;
+  coupons?:Array<Coupon>;
+  status:Array<any> = ['complete', 'processing', 'cancelled'];
 
 
   constructor(private API: ApiService, public router: Router) {
@@ -24,16 +26,16 @@ export class AddorderComponent implements OnInit {
   ngOnInit(): void {
     this.addForm = new FormGroup({
       'client': new FormControl(),
-      'products': new FormControl(),
+      'products': new FormControl(`{\n "Products":\n   {\n    "product_id":"amount",\n   "product_id":"amount"\n    }\n}`),
       'couponused': new FormControl(),
       'status': new FormControl(),
       'total': new FormControl()
     })
 
-    this.API.getClientIDs().subscribe((response) => {
+    this.API.getClients().subscribe((response) => {
       this.clients = response;
     })
-    this.API.getCouponIDs().subscribe((response) => {
+    this.API.getCoupons().subscribe((response) => {
       this.coupons = response;
     })
   }

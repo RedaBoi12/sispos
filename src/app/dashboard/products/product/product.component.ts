@@ -1,7 +1,9 @@
+import { Product } from './../../../interfaces/product';
 import { Component, Inject, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Router } from '@angular/router';
+import { Category } from 'src/app/interfaces/category';
 import { ApiService } from 'src/app/services/api.service';
 import Swal from 'sweetalert2';
 
@@ -15,8 +17,8 @@ export class ProductComponent implements OnInit {
   //definitions
   addForm!: FormGroup;
   id: number;
-  product!: any;
-  categoryids: any;
+  product!: Array<Product>;
+  categoryids?:Array<Category>;
 
 
   constructor(private API: ApiService, public router: Router, @Inject(MAT_DIALOG_DATA) public data: any) {
@@ -42,7 +44,7 @@ export class ProductComponent implements OnInit {
       this.addForm.get('isActivated')?.setValue(this.product[0].isActivated);
     })
 
-    this.API.getCategoryIDs().subscribe((response) => {
+    this.API.getCategories().subscribe((response) => {
       this.categoryids = response;
     })
   }

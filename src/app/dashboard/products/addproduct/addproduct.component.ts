@@ -1,6 +1,7 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
+import { Category } from 'src/app/interfaces/category';
 import { ApiService } from 'src/app/services/api.service';
 import Swal from 'sweetalert2';
 
@@ -13,7 +14,7 @@ export class AddproductComponent implements OnInit {
 
 
   addForm!: FormGroup;
-  categoryids: any;
+  categoryids?:Array<Category>;
 
   constructor(private API: ApiService, public router: Router) {
   }
@@ -28,9 +29,7 @@ export class AddproductComponent implements OnInit {
       'isActivated': new FormControl(true)
     })
 
-    this.API.getCategoryIDs().subscribe((response) => {
-      this.categoryids = response;
-    })
+    this.API.getCategories().subscribe((response) => {this.categoryids = response});
   }
 
 

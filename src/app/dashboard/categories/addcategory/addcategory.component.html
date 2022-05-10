@@ -1,63 +1,43 @@
 <h2>Add a Category</h2>
 <hr>
 <div class="container-fluid">
-  <form [formGroup]="addForm">
-    <fieldset>
-      <div class="mb-3">
-        <br>
-        <label for="name" class="form-label">Name</label>
+    <form [formGroup]="addForm">
+        <fieldset>
+            <div class="mb-3">
+                <br>
+                <label for="name" class="form-label">Name</label>
 
-        <input 
-          formControlName="name" 
-          title="Name" 
-          required 
-          type="text" 
-          class="form-control" 
-          id="name">
+                <input formControlName="name" title="Name" required type="text" class="form-control" id="name">
 
-        <div id="nameHelp" class="form-text">Make sure this category doesn't already exist.</div>
-        <br>
-        <label for="name" class="form-label">Description</label>
+                <div id="nameHelp" class="form-text">Make sure this category doesn't already exist.</div>
+                <br>
+                <label for="name" class="form-label">Description</label>
 
-        <textarea 
-        maxlength="100"
-        rows="2"
-        formControlName="description" 
-        title="Description"
-        class="form-control" 
-        placeholder="Enter Category Description"
-        id="description">
+                <textarea maxlength="100" rows="2" formControlName="description" title="Description" class="form-control" placeholder="Enter Category Description" id="description">
       </textarea>
 
-        <div id="descriptionHelp" class="form-text">100 Character Length Maximum.</div>
-        <br>
-        <label for="shell" class="form-label">Shell</label>
+                <div id="descriptionHelp" class="form-text">100 Character Length Maximum.</div>
+                <br>
+                <label for="shell" class="form-label">Shell</label>
 
-        <input 
-          formControlName="shell" 
-          title="Shell" 
-          required 
-          type="text" 
-          class="form-control" 
-          id="shell"
-          placeholder="/shell">
+                <input formControlName="shell" title="Shell" required type="text" class="form-control" id="shell" placeholder="/shell">
 
-        <div id="shellHelp" class="form-text">Make sure to start the shell with a /.</div>
+                <div id="shellHelp" class="form-text">Make sure to start the shell with a /.</div>
 
-        <br>
+                <br>
 
-        <input formControlName="ismother" title="is it a Mother Category?" checked type="checkbox" class="form-check" id="mother" (click)="changeType()">
-        <label for="mother" class="form-label">a {{this.isChild? 'Child':'Mother'}} Category</label>
-        <div *ngIf="isChild">
-          <select title="Mother Category" formControlName="mother" class="form-select" id="mothername">
+                <input formControlName="isChild" title="is it a Mother Category?" checked type="checkbox" class="form-check" id="isChild" (click)="changeType()">
+                <label for="isChild" class="form-label">a {{this.isChild? 'Child':'Mother'}} Category</label>
+                <div *ngIf="isChild">
+                    <select title="Mother Category" formControlName="motherID" class="form-select" id="motherID">
             <option value="-1">-- Select Mother Category --</option>
-            <option *ngFor="let mother of motherIDs" value="mother.id">{{mother.id}}</option>
+            <option *ngFor="let mother of motherIDs" value="{{mother.id}}">({{mother.id}}) - {{mother.name}}</option>
           </select>
-        </div>
-      </div>
-      <button type="button" (click)="create()" class="btn btn-success">Add</button>
-      <br>
-    </fieldset>
-  </form>
+                </div>
+            </div>
+            <button type="button" (click)="create()" class="btn btn-success container-fluid">Add</button>
+            <br>
+        </fieldset>
+    </form>
 </div>
 <hr>
