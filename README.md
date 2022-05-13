@@ -36,11 +36,13 @@ The Login Page, the user is redirected here if he selects the Login option in th
 The Dashboard Main Page, the user is redirected here only upon a successfull login process.
 ![Dashboard Main Page](./src/assets/readme/gif-main.gif)  
 
-The Dashboard Tables, where the user can see full details on all system data, with crud options.  
-![Dashboard Tables](./src/assets/readme/gif-tables.gif)  
+Tables, where the user can see full details on all system data, with crud options.   
+Here are two examples :
+![Clients Table](./src/assets/readme/table1.png)  
+![Categories Table](./src/assets/readme/table2.png)  
 
-The To-Do Page, where the user can manage personal tasks and delete completed tasks.  
-![Dashboard Tables](./src/assets/readme/gif-todo.gif)  
+The Task Manager, where the user can manage personal tasks and delete completed tasks.  
+![Dashboard Tables](./src/assets/readme/tasks.png)  
 <br><br><br><br>
 ## Color Reference
 
