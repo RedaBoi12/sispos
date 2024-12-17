@@ -1,160 +1,164 @@
+# ![Logo](./src/assets/img/favicon.png)
 
-![Logo](./src/assets/img/favicon.png)
+# SISPOS Dashboard
 
+A modern and clean POS Dashboard built using the PEAN Stack.
 
-# SISPOS DASHBOARD
+---
 
-Clean POS Dashboard made using the PEAN Stack.  
-<br><br>
+## 🚀 Technologies
 
+### **Frontend:**
+- [Angular](https://angular.io) - Framework for building web applications.
+- [Angular Material](https://material.angular.io) - UI components for Angular.
+- [Bootstrap](https://getbootstrap.com) - CSS framework for responsive design.
+- [SweetAlert2](https://sweetalert2.github.io) - Stylish popup notifications.
 
-## Technologies
+### **Backend:**
+- [PostgreSQL](https://www.postgresql.org) - Relational database management system.
+- [Express](https://expressjs.com) - Web application framework.
+- [Node.js](https://nodejs.org/en/) - JavaScript runtime.
 
-- Front-end: [Angular](https://angular.io), [Angular Material](https://material.angular.io), [Bootstrap](https://getbootstrap.com), [sweetalert2](https://sweetalert2.github.io)
-- Back-end: [PostgreSQL](https://www.postgresql.org), [Express](https://expressjs.com), [Node.js](https://nodejs.org/en/)
-- APIs: [SISAPI](https://sispos-api.herokuapp.com), [countryflagsapi](https://countryflagsapi.com)
+### **APIs:**
+- [SISAPI](https://sispos-api.herokuapp.com) - Custom backend API.
+- [CountryFlagsAPI](https://countryflagsapi.com) - Country flag images.
 
-<br><br>
-## Features
+---
 
-- Locally stored data (Postgres)  
-- Personal API
-- Fast & Simple  
-- Easy to deploy
-- Full Data C.R.U.D 
+## 🎯 Features
 
-<br><br><br><br>
+- Full C.R.U.D Operations (Create, Read, Update, Delete)
+- Local Data Storage (PostgreSQL)
+- Simple & Fast Deployment
+- Custom API Integration
+- User-friendly Interface
 
-## Screenshots
+---
 
-The Main Login Page the user gets Directed to upon loading the website.  
-![Main Page](./src/assets/readme/main.png)  
+## 📸 Screenshots
 
-The Login Page, the user is redirected here if he selects the Login option in the page earlier.  
-![Login Page](./src/assets/readme/login.png)  
+### **Main Page:**
+![Main Page](./src/assets/readme/main.png)
 
-The Dashboard Main Page, the user is redirected here only upon a successfull login process.
-![Dashboard Main Page](./src/assets/readme/gif-main.gif)  
+### **Login Page:**
+![Login Page](./src/assets/readme/login.png)
 
-Tables, where the user can see full details on all system data, with crud options.   
-Here are two examples :
-![Clients Table](./src/assets/readme/table1.png)  
-![Categories Table](./src/assets/readme/table2.png)  
+### **Dashboard:**
+![Dashboard Main Page](./src/assets/readme/gif-main.gif)
 
-The Task Manager, where the user can manage personal tasks and delete completed tasks.  
-![Dashboard Tables](./src/assets/readme/tasks.png)  
-<br><br><br><br>
-## Color Reference
+### **Data Tables:**
+- Clients Table: ![Clients Table](./src/assets/readme/table1.png)
+- Categories Table: ![Categories Table](./src/assets/readme/table2.png)
 
-| Color             | Hex                                                                |
+### **Task Manager:**
+![Task Manager](./src/assets/readme/tasks.png)
+
+---
+
+## 🎨 Color Palette
+
+| Color             | Hex Value                                                         |
 | ----------------- | ------------------------------------------------------------------ |
-| whitesmoke | ![#F5F5F5](https://via.placeholder.com/10/F5F5F5?text=+) #F5F5F5 |
-| sky gradient | ![#2980B9](https://via.placeholder.com/10/2980B9?text=+) #2980B9 | ![#6DD5FA](https://via.placeholder.com/10/6DD5FA?text=+) #6DD5FA |
-| primary gradient | ![#4A00E0](https://via.placeholder.com/10/4A00E0?text=+) #4A00E0 | ![#8E2DE2](https://via.placeholder.com/10/8E2DE2?text=+) #8E2DE2 |
-| warning gradient | ![#f5af19](https://via.placeholder.com/10/f5af19?text=+) #f5af19 | ![#f12711](https://via.placeholder.com/10/f12711?text=+) #f12711 |
-| light gradient | ![#78ffd6](https://via.placeholder.com/10/78ffd6?text=+) #78ffd6 | ![#a8ff78](https://via.placeholder.com/10/a8ff78?text=+) #a8ff78 |
-| info gradient | ![#5D26C1](https://via.placeholder.com/10/5D26C1?text=+) #5D26C1 | ![#a17fe0](https://via.placeholder.com/10/a17fe0?text=+) #a17fe0 |
-| danger gradient | ![#93291E](https://via.placeholder.com/10/93291E?text=+) #93291E | ![#ED213A](https://via.placeholder.com/10/ED213A?text=+) #ED213A |
+| Whitesmoke        | ![#F5F5F5](https://via.placeholder.com/10/F5F5F5?text=+) #F5F5F5 |
+| Sky Gradient      | ![#2980B9](https://via.placeholder.com/10/2980B9?text=+) #2980B9 - ![#6DD5FA](https://via.placeholder.com/10/6DD5FA?text=+) #6DD5FA |
+| Primary Gradient  | ![#4A00E0](https://via.placeholder.com/10/4A00E0?text=+) #4A00E0 - ![#8E2DE2](https://via.placeholder.com/10/8E2DE2?text=+) #8E2DE2 |
+| Warning Gradient  | ![#f5af19](https://via.placeholder.com/10/f5af19?text=+) #f5af19 - ![#f12711](https://via.placeholder.com/10/f12711?text=+) #f12711 |
+| Light Gradient    | ![#78ffd6](https://via.placeholder.com/10/78ffd6?text=+) #78ffd6 - ![#a8ff78](https://via.placeholder.com/10/a8ff78?text=+) #a8ff78 |
+| Info Gradient     | ![#5D26C1](https://via.placeholder.com/10/5D26C1?text=+) #5D26C1 - ![#a17fe0](https://via.placeholder.com/10/a17fe0?text=+) #a17fe0 |
+| Danger Gradient   | ![#93291E](https://via.placeholder.com/10/93291E?text=+) #93291E - ![#ED213A](https://via.placeholder.com/10/ED213A?text=+) #ED213A |
 
-<br><br><br><br>
-## API Reference
+---
 
-#### SISAPI
+## 🧩 API Reference
 
-Sispos uses [SISAPI](https://github.com/RedaBoi12/sisapi) P.E.N API for all data.  
-- Full API Reference can be found at the page.  
+### SISAPI
+- Full API Documentation: [SISAPI GitHub Repository](https://github.com/RedaBoi12/sisapi)
 
-
-
-
-#### COUNTRIESAPI
-
+### CountryFlagsAPI
 ```http
-  GET /${file-type}/${country}
+GET /${file-type}/${country}
 ```
+| Parameter    | Type     | Description                     |
+|--------------|----------|---------------------------------|
+| `file-type`  | `string` | Required. PNG or SVG format    |
+| `country`    | `string` | Required. Country code or name |
 
-| Parameter | Type     | Description                       |
-| :-------- | :------- | :-------------------------------- |
-| `file-type`      | `string` | **Required**. png or svg |
-| `country`      | `string` | **Required**. country code or name |
+---
 
- <br><br><br><br>
-## Test online
+## 🌐 Test Online
 
- https://sispos-dashboard.herokuapp.com
-<br><br><br><br>
-## Run Locally
+[Live Demo](https://sispos-dashboard.herokuapp.com)
 
+---
+
+## 🏃 Run Locally
+
+1. Clone the project:
 ```bash
   git clone https://github.com/RedaBoi12/sispos.git
 ```
-
-2) Go to the project directory
-
+2. Navigate to the project directory:
 ```bash
   cd sispos
 ```
-
-3) Install dependencies
-
+3. Install dependencies:
 ```bash
   npm install
 ```
-
-4) Start the server
-
+4. Start the development server:
 ```bash
   ng serve
 ```
 
-<br><br><br><br>
-## Roadmap
+---
 
-- Additional browser support
+## 🛣️ Roadmap
 
-- Additional code optimisation
-<br><br><br><br>
-## Support
+- Add Browser Support Enhancements
+- Improve Code Optimization
 
-For support, email redabusiness10@gmail.com.
+---
 
-<br><br><br><br>
-## FAQ
+## 🤝 Support
 
-#### How long did this project take?
+For any issues, contact: **redabusiness10@gmail.com**
 
-Answer : Less than a month.
+---
 
-#### Do you plan on updating it in the future?
+## 💡 FAQ
 
-Answer : Not really, this project is mainly for me to learn angular.
+**Q: How long did this project take?**
+- A: Less than a month.
 
-<br><br><br><br>
-## 🚀 About Me
-Hello, my name is [ElGoumri Reda](https://www.github.com/RedaBoi12), and I am the creator of this repository
-"SISPOS", which is my second angular project and
-is primarily intended to help me learn and understand the framework
-as much as possible .
+**Q: Do you plan on updating it?**
+- A: No, this project was built primarily for learning Angular.
 
+---
 
-## 🛠 Skills
-HTML, CSS, jQuery, Javascript, Typescript  
-**Frameworks:** Bootstrap, Angular
+## 👨‍💻 About Me
 
-<br><br><br><br>
-## Lessons Learned
+Hello, my name is **[ElGoumri Reda](https://www.github.com/RedaBoi12)**. I created SISPOS as my second Angular project to gain a deeper understanding of the framework.
 
-**What did you learn while building this project? What challenges did you face and how did you overcome them?**
+---
 
-Long before this project, I had very little knowledge of front end development.
-or web development in general, but working on this project, getting errors
-and spending so much time looking for fixes is really how a person
-learn something.
+## 🛠️ Skills
 
-The most difficult challenge for me in this project was learning how to fully manipulate
-an API using http requests and the HttpClient module offered by Angular, whether in
-retrieving all the information via a GET request, loading the return into an observable,
-by transforming it into an array to move it from one page to another and display the information
-correct to the user.   
+**Languages:** HTML, CSS, JavaScript, TypeScript  
+**Frameworks & Tools:** Bootstrap, Angular, Express, Node.js, PostgreSQL
 
-I also learned how to make a full P.E.N REST Api from scratch, and linked it to my project. Which is really cool!
+---
+
+## 📚 Lessons Learned
+
+Working on SISPOS significantly enhanced my front-end development skills. I faced multiple challenges, particularly:
+
+- **API Integration:** Learning how to interact with APIs using Angular's HttpClient module.
+- **Data Management:** Handling and displaying data using Observables.
+- **Backend Development:** Building a full P.E.N REST API from scratch and linking it to the project.
+
+Every bug encountered and solved helped deepen my understanding of Angular and modern web development.
+
+---
+
+Thank you for exploring SISPOS Dashboard! 🚀
+
